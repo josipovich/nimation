@@ -62,8 +62,8 @@ const CtorStyles = styled.div`
   position: absolute;
   ${p => colorStyles(p.s.color)}
   ${p => transformStyles(p.s.scale, p.s.shape)}
-  ${p => (p.s.shape === 'circle' ? circleStyles() : '')}
-  ${p => (p.s.shape === 'triangle' ? triangleStyles(p.s.color) : '')}
+  ${p => p.s.shape === 'circle' && circleStyles()}
+  ${p => p.s.shape === 'triangle' && triangleStyles(p.s.color)}
   ${p => positionStyles(p.s.position)}
 `
 

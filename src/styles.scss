@@ -11,23 +11,6 @@ html {
   padding: 0;
 }
 
-.bg {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  flex-content: center;
-}
-
-.Nimation {
-  margin: auto;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  position: relative;
-  transform: rotate(45deg) scale(1);
-  // animation: spin 0.15s linear infinite;
-}
-
 
 @keyframes topToBottom {
   0% {

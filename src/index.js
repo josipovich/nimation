@@ -1,16 +1,24 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import styled from 'styled-components'
 
 import Nimation from './components/Nimation'
 import Controls from './components/Controls/'
 import './styles.scss'
 
+const AppWrapper = styled.div`
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-content: center;
+`
+
 const App = () => {
   return (
-    <div className="bg">
+    <AppWrapper>
       <Nimation />
       <Controls />
-    </div>
+    </AppWrapper>
   )
 }
 

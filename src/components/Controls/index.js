@@ -44,7 +44,6 @@ const Controls = () => {
       <input name="animation-speed" type="text" onChange={handleAnimationSpeedChange} />
       <Slider />
       <Range />
-      <test>asdasdasd</test>
     </div>
   )
 }
