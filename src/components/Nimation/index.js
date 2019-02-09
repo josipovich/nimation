@@ -1,16 +1,15 @@
-import React, { Component } from 'react'
-import Ctor from './Ctor'
+import React from 'react'
 import { view } from 'react-easy-state'
-import Store from './Store'
+import Ctor from '../Ctor'
+import Store from '../../stores/Store'
 
-// const positions = ['top', 'bottom', 'left', 'right']
 const Nimation = () => {
   const styles = {
     animation: `spin ${Store.animationSpeed}s linear infinite`
   }
   return (
     <div style={styles} className="Nimation">
-      {Store.ctors.map((ctorProps, id) => (
+      {Store.ctors.map(ctorProps => (
         <Ctor {...ctorProps} />
       ))}
     </div>

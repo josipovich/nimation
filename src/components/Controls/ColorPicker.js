@@ -1,9 +1,7 @@
 import React from 'react'
 import reactCSS from 'reactcss'
 import { ChromePicker } from 'react-color'
-import Store from './Store'
 import { view } from 'react-easy-state'
-import { COLOR } from './consts'
 
 class ColorPicker extends React.Component {
   state = {
@@ -31,9 +29,9 @@ class ColorPicker extends React.Component {
           width: '36px',
           height: '14px',
           borderRadius: '2px',
-          background: `rgba(${this.state.color.r}, ${this.state.color.g}, ${
-            this.state.color.b
-          }, ${this.state.color.a})`
+          background: `rgba(${this.state.color.r}, ${this.state.color.g}, ${this.state.color.b}, ${
+            this.state.color.a
+          })`
         },
         swatch: {
           padding: '5px',
@@ -65,10 +63,7 @@ class ColorPicker extends React.Component {
         {this.state.displayColorPicker ? (
           <div style={styles.popover}>
             <div style={styles.cover} onClick={this.handleClose} />
-            <ChromePicker
-              color={this.state.color}
-              onChange={this.handleChange}
-            />
+            <ChromePicker color={this.state.color} onChange={this.handleChange} />
           </div>
         ) : null}
       </div>

@@ -1,9 +1,10 @@
-import React, { Component, Fragment } from 'react'
+import React from 'react'
 import Select from 'react-select'
-import ColorPicker from './ColorPicker'
-import { OPTIONS } from './consts'
 import { view } from 'react-easy-state'
-import Store from './Store'
+import Slider, { Range } from 'rc-slider'
+import { OPTIONS } from '../../consts'
+import ColorPicker from './ColorPicker'
+import Store from '../../stores/Store'
 
 const handleShapeChange = id => scale => {
   Store.ctors[id].shape = scale.value
@@ -27,28 +28,17 @@ const Controls = () => {
       {Store.ctors.map(({ color, id }) => (
         <div className="Controls__PerCtor">
           <ColorPicker color={color} onChange={handleColorChange(id)} />
-          {/*<Select placeholder="Positions" options={OPTIONS.POSITIONS} /> */}
           <div className="Select">
-            <Select
-              onChange={handleScaleChange(id)}
-              placeholder="Scale"
-              options={OPTIONS.SCALES}
-            />
+            <Select onChange={handleScaleChange(id)} placeholder="Scale" options={OPTIONS.SCALES} />
           </div>
           <div className="Select">
-            <Select
-              onChange={handleShapeChange(id)}
-              placeholder="Shape"
-              options={OPTIONS.SHAPES}
-            />
+            <Select onChange={handleShapeChange(id)} placeholder="Shape" options={OPTIONS.SHAPES} />
           </div>
         </div>
       ))}
-      <input
-        name="animation-speed"
-        type="text"
-        onChange={handleAnimationSpeedChange}
-      />
+      <input name="animation-speed" type="text" onChange={handleAnimationSpeedChange} />
+      <Slider />
+      <Range />
     </div>
   )
 }

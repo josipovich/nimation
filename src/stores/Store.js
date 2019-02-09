@@ -1,5 +1,5 @@
 import { store } from 'react-easy-state'
-import { COLOR, POSITION, DEFAULT_SCALE } from './consts'
+import { COLOR, POSITION, DEFAULT_SCALE } from '../consts'
 
 const Store = store({
   animationSpeed: 0,

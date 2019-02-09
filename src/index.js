@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Nimation from './Nimation'
-import Controls from './Controls'
+import Nimation from './components/Nimation'
+import Controls from './components/Controls/'
 import './styles.scss'
 
 const App = () => {
