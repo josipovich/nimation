@@ -1,2 +1,0 @@
-# nimation
-Created with CodeSandbox

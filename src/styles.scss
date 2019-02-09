@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+}
+
+$scale-small: scale(1);
+$scale-big: scale(2);
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.bg {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-content: center;
+}
+
+.Nimation {
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  position: relative;
+  transform: rotate(45deg) scale(1);
+  // animation: spin 0.15s linear infinite;
+}
+
+.Ctor {
+  width: 40%;
+  height: 40%;
+  position: absolute;
+  transform: scale(2);
+
+  &--circle {
+    border-radius: 50%;
+  }
+
+  &--triangle {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid black;
+  }
+
+  &--top {
+    top: -20%;
+    left: -20%;
+    // animation: topToBottom 2s ease-in-out alternate infinite;
+  }
+  &--bottom {
+    top: 80%;
+    left: 80%;
+    // animation: bottomToTop 2s ease-in-out alternate infinite;
+  }
+  &--left {
+    bottom: -20%;
+    left: -20%;
+    // animation: leftToRight 2s ease-in-out alternate infinite;
+  }
+  &--right {
+    bottom: 80%;
+    left: 80%;
+    // animation: rightToLeft 2s ease-in-out alternate infinite;
+  }
+}
+
+@keyframes topToBottom {
+  0% {
+    transform: $scale-big;
+  }
+  50% {
+    transform: $scale-small;
+  }
+  100% {
+    transform: $scale-big;
+    top: 80%;
+    left: 80%;
+  }
+}
+
+@keyframes bottomToTop {
+  0% {
+    transform: $scale-big;
+  }
+  50% {
+    transform: $scale-small;
+  }
+  100% {
+    transform: $scale-big;
+    top: -20%;
+    left: -20%;
+  }
+}
+
+@keyframes leftToRight {
+  0% {
+    transform: $scale-big;
+  }
+  50% {
+    transform: $scale-small;
+  }
+  100% {
+    transform: $scale-big;
+    bottom: 80%;
+    left: 80%;
+  }
+}
+
+@keyframes rightToLeft {
+  0% {
+    transform: $scale-big;
+  }
+  50% {
+    transform: $scale-small;
+  }
+  100% {
+    transform: $scale-big;
+    bottom: -20%;
+    left: -20%;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) scale(2);
+  }
+  100% {
+    transform: rotate(359deg) scale(2);
+  }
+}
+
+.Controls {
+  position: fixed;
+  width: 200px;
+  padding: 1rem;
+}
+
+.Select {
+  margin-bottom: 0.5rem;
+}
+
+.Controls__PerCtor {
+  margin-bottom: 2rem;
+}
+
+.ColorPicker {
+  margin-bottom: 0.3rem;
+}
