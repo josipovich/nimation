@@ -28,45 +28,6 @@ html {
   // animation: spin 0.15s linear infinite;
 }
 
-.Ctor {
-  width: 40%;
-  height: 40%;
-  position: absolute;
-  transform: scale(2);
-
-  &--circle {
-    border-radius: 50%;
-  }
-
-  &--triangle {
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-bottom: 5px solid black;
-  }
-
-  &--top {
-    top: -20%;
-    left: -20%;
-    // animation: topToBottom 2s ease-in-out alternate infinite;
-  }
-  &--bottom {
-    top: 80%;
-    left: 80%;
-    // animation: bottomToTop 2s ease-in-out alternate infinite;
-  }
-  &--left {
-    bottom: -20%;
-    left: -20%;
-    // animation: leftToRight 2s ease-in-out alternate infinite;
-  }
-  &--right {
-    bottom: 80%;
-    left: 80%;
-    // animation: rightToLeft 2s ease-in-out alternate infinite;
-  }
-}
 
 @keyframes topToBottom {
   0% {

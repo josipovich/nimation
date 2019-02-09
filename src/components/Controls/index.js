@@ -5,10 +5,15 @@ import Slider, { Range } from 'rc-slider'
 import { OPTIONS } from '../../consts'
 import ColorPicker from './ColorPicker'
 import Store from '../../stores/Store'
+import styled from 'styled-components'
 
 const handleShapeChange = id => scale => {
   Store.ctors[id].shape = scale.value
 }
+
+const test = styled.p`
+  color: red;
+`
 
 const handleScaleChange = id => scale => {
   Store.ctors[id].scale = scale.label
@@ -39,6 +44,7 @@ const Controls = () => {
       <input name="animation-speed" type="text" onChange={handleAnimationSpeedChange} />
       <Slider />
       <Range />
+      <test>asdasdasd</test>
     </div>
   )
 }
