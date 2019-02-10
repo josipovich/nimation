@@ -26,8 +26,8 @@ const NimationStyled = styled.div`
 const Nimation = () => {
   return (
     <NimationStyled animationSpeed={Store.animationSpeed} className="Nimation">
-      {Store.ctors.map(ctorProps => (
-        <Ctor {...ctorProps} />
+      {Store.ctors.map((ctorProps, i) => (
+        <Ctor order={i + 1} {...ctorProps} />
       ))}
     </NimationStyled>
   )

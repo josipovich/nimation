@@ -2,42 +2,68 @@ import React from 'react'
 import Select from 'react-select'
 import { view } from 'react-easy-state'
 import Slider, { Range } from 'rc-slider'
-import { OPTIONS } from '../../consts'
+import { OPTIONS, DEFAULT_SCALE } from '../../consts'
 import ColorPicker from './ColorPicker'
 import Store from '../../stores/Store'
-import styled from 'styled-components'
 
-const handleShapeChange = id => scale => {
-  Store.ctors[id].shape = scale.value
+const immutableSplice = (arr, start, deleteCount, ...items) => [
+  ...arr.slice(0, start),
+  ...items,
+  ...arr.slice(start + deleteCount)
+]
+
+const handleShapeChange = id => ({ value }) => {
+  Store.ctors.find(d => d.id === id).shape = value
 }
 
-const test = styled.p`
-  color: red;
-`
-
-const handleScaleChange = id => scale => {
-  Store.ctors[id].scale = scale.label
+const handleScaleChange = id => ({ value }) => {
+  Store.ctors.find(d => d.id === id).scale = value
 }
 
-const handleColorChange = id => color => {
-  Store.ctors[id].color = color.rgb
+const handleSendToTopClick = id => () => {
+  Store.ctors = immutableSplice(
+    Store.ctors.filter(ctor => ctor.id !== id),
+    Store.ctors.length - 1,
+    0,
+    Store.ctors.find(ctor => ctor.id === id)
+  )
 }
 
-const handleAnimationSpeedChange = e => {
-  Store.animationSpeed = e.target.value
+const handleColorChange = id => ({ rgb }) => {
+  Store.ctors.find(d => d.id === id).color = rgb
+}
+
+const handleAnimationSpeedChange = ({ target: { value } }) => {
+  Store.animationSpeed = value
 }
 
 const Controls = () => {
   return (
     <div className="Controls">
-      {Store.ctors.map(({ color, id }) => (
+      {Store.ctors.map(({ color, shape }, id) => (
         <div className="Controls__PerCtor">
           <ColorPicker color={color} onChange={handleColorChange(id)} />
+
+          <button className="button button--send-to-top" onClick={handleSendToTopClick(id)}>
+            Send to top
+          </button>
+
           <div className="Select">
-            <Select onChange={handleScaleChange(id)} placeholder="Scale" options={OPTIONS.SCALES} />
+            <label>Scale: </label>
+            <Select
+              onChange={handleScaleChange(id)}
+              options={OPTIONS.SCALES}
+              defaultValue={DEFAULT_SCALE}
+            />
           </div>
           <div className="Select">
-            <Select onChange={handleShapeChange(id)} placeholder="Shape" options={OPTIONS.SHAPES} />
+            <label>Shape: </label>
+
+            <Select
+              onChange={handleShapeChange(id)}
+              defaultValue={OPTIONS.SHAPES.find(ctor => ctor.value === shape)}
+              options={OPTIONS.SHAPES}
+            />
           </div>
         </div>
       ))}

@@ -56,10 +56,17 @@ const circleStyles = () => css`
   border-radius: 50%;
 `
 
+const zIndexStyles = order =>
+  order &&
+  css`
+    z-index: ${order};
+  `
+
 const CtorStyles = styled.div`
   width: 40%;
   height: 40%;
   position: absolute;
+  ${p => zIndexStyles(p.s.order)}
   ${p => colorStyles(p.s.color)}
   ${p => transformStyles(p.s.scale, p.s.shape)}
   ${p => p.s.shape === 'circle' && circleStyles()}

@@ -37,7 +37,7 @@ class ColorPicker extends React.Component {
           padding: '5px',
           background: '#fff',
           borderRadius: '1px',
-          boxShadow: '0 0 0 1px rgba(0,0,0,.1)',
+          boxShadow: '0 0 0 1px #ccc',
           display: 'inline-block',
           cursor: 'pointer'
         },
