@@ -3,14 +3,9 @@ import Select from 'react-select'
 import { view } from 'react-easy-state'
 import Slider, { Range } from 'rc-slider'
 import { OPTIONS, DEFAULT_SCALE } from '../../consts'
+import { immutableSplice } from '../../utils'
 import ColorPicker from './ColorPicker'
 import Store from '../../stores/Store'
-
-const immutableSplice = (arr, start, deleteCount, ...items) => [
-  ...arr.slice(0, start),
-  ...items,
-  ...arr.slice(start + deleteCount)
-]
 
 const handleShapeChange = id => ({ value }) => {
   Store.ctors.find(d => d.id === id).shape = value

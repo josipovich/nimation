@@ -31,7 +31,7 @@ html {
 }
 
 .button {
-  padding: .3rem;
+  padding: 0.3rem;
   vertical-align: top;
   margin-left: 1rem;
   border: 1px solid #ccc;
@@ -41,59 +41,3 @@ html {
     // color: red;
   }
 }
-
-// @keyframes topToBottom {
-//   0% {
-//     transform: $scale-big;
-//   }
-//   50% {
-//     transform: $scale-small;
-//   }
-//   100% {
-//     transform: $scale-big;
-//     top: 80%;
-//     left: 80%;
-//   }
-// }
-
-// @keyframes bottomToTop {
-//   0% {
-//     transform: $scale-big;
-//   }
-//   50% {
-//     transform: $scale-small;
-//   }
-//   100% {
-//     transform: $scale-big;
-//     top: -20%;
-//     left: -20%;
-//   }
-// }
-
-// @keyframes leftToRight {
-//   0% {
-//     transform: $scale-big;
-//   }
-//   50% {
-//     transform: $scale-small;
-//   }
-//   100% {
-//     transform: $scale-big;
-//     bottom: 80%;
-//     left: 80%;
-//   }
-// }
-
-// @keyframes rightToLeft {
-//   0% {
-//     transform: $scale-big;
-//   }
-//   50% {
-//     transform: $scale-small;
-//   }
-//   100% {
-//     transform: $scale-big;
-//     bottom: -20%;
-//     left: -20%;
-//   }
-// }
