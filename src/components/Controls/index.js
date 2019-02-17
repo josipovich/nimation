@@ -56,6 +56,14 @@ const handleAnimationSpeedChange = ({ target: { value } }) => {
   Store.animationSpeed = value
 }
 
+const handleFlyChange = id => e => {
+  Store.ctors.find(d => d.id === id).fly = e.target.checked
+}
+
+const handlePulseChange = id => e => {
+  Store.ctors.find(d => d.id === id).pulse = e.target.checked
+}
+
 const Controls = () => {
   return (
     <ControlsStyled>
@@ -73,6 +81,7 @@ const Controls = () => {
               defaultValue={DEFAULT_SCALE}
             />
           </SelectStyled>
+
           <SelectStyled>
             <label>Shape: </label>
 
@@ -82,8 +91,14 @@ const Controls = () => {
               options={OPTIONS.SHAPES}
             />
           </SelectStyled>
+
+          <label>Fly: </label>
+          <input name="fly" type="checkbox" onChange={handleFlyChange(id)} defaultChecked />
+          <label>Pulse: </label>
+          <input name="pulse" type="checkbox" onChange={handlePulseChange(id)} defaultChecked />
         </ControlsPerCtorStyled>
       ))}
+
       <input name="animation-speed" type="text" onChange={handleAnimationSpeedChange} />
       <Slider />
       <Range />

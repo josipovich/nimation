@@ -1,14 +1,14 @@
 import { keyframes } from 'styled-components'
 import { transformStyles } from './styles'
 
-export const pulse = ({ shape, scale }) => keyframes`
-0% {
-  transform: ${transformStyles(scale, shape)};
-}
-100% {
-  transform: ${transformStyles(Number(scale) * 2.5, shape)};
-}
-`
+export const pulse = ({ scale = 1 }) => keyframes`
+  0% {
+    transform: scale(${scale});
+  }
+  100% {
+    transform: scale(${scale * 2.5});
+  }
+  `
 
 export const fly = ({ position }) => {
   switch (position) {

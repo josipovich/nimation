@@ -9,7 +9,9 @@ const Store = store({
       color: COLOR.CREAM,
       position: POSITION.TOP,
       scale: DEFAULT_SCALE.value,
-      shape: 'circle'
+      shape: 'circle',
+      fly: true,
+      pulse: true
       // order: 1
     },
     {
@@ -17,7 +19,9 @@ const Store = store({
       color: COLOR.RED,
       position: POSITION.LEFT,
       scale: DEFAULT_SCALE.value,
-      shape: 'square'
+      shape: 'square',
+      fly: true,
+      pulse: true
       // order: 2
     },
     {
@@ -25,7 +29,9 @@ const Store = store({
       color: COLOR.GRAY,
       position: POSITION.RIGHT,
       scale: DEFAULT_SCALE.value,
-      shape: 'triangle'
+      shape: 'triangle',
+      fly: true,
+      pulse: true
       // order: 3
     },
     {
@@ -33,7 +39,9 @@ const Store = store({
       color: COLOR.ORANGE,
       position: POSITION.BOTTOM,
       scale: DEFAULT_SCALE.value,
-      shape: 'square'
+      shape: 'square',
+      fly: true,
+      pulse: true
       // order: 4
     }
   ]

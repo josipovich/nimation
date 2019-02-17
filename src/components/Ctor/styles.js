@@ -62,6 +62,6 @@ export const zIndexStyles = ({ order }) =>
   `
 
 export const animationStyles = props => css`
-  animation: ${pulse(props)} 2s ease-in-out alternate infinite,
-    ${fly(props)} 5s ease-in-out alternate infinite;
+  animation: ${pulse(props)} ${props.pulse ? '5' : '0'}s ease-in-out alternate infinite,
+    ${fly(props)} ${props.fly ? '2' : '0'}s ease-in-out alternate infinite;
 `
