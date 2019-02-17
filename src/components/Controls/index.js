@@ -1,11 +1,35 @@
 import React from 'react'
 import Select from 'react-select'
 import { view } from 'react-easy-state'
+import styled from 'styled-components'
 import Slider, { Range } from 'rc-slider'
+import ColorPicker from './ColorPicker'
+
 import { OPTIONS, DEFAULT_SCALE } from '../../consts'
 import { immutableSplice } from '../../utils'
-import ColorPicker from './ColorPicker'
 import Store from '../../stores/Store'
+
+const ControlsStyled = styled.div`
+  position: fixed;
+  width: 200px;
+  padding: 1rem;
+`
+
+const SelectStyled = styled.div`
+  margin-bottom: 0.5rem;
+`
+
+const ControlsPerCtorStyled = styled.div`
+  margin-bottom: 2rem;
+`
+
+const ButtonStyled = styled.button`
+  padding: 0.3rem;
+  vertical-align: top;
+  margin-left: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+`
 
 const handleShapeChange = id => ({ value }) => {
   Store.ctors.find(d => d.id === id).shape = value
@@ -34,24 +58,22 @@ const handleAnimationSpeedChange = ({ target: { value } }) => {
 
 const Controls = () => {
   return (
-    <div className="Controls">
+    <ControlsStyled>
       {Store.ctors.map(({ color, shape }, id) => (
-        <div className="Controls__PerCtor">
+        <ControlsPerCtorStyled>
           <ColorPicker color={color} onChange={handleColorChange(id)} />
 
-          <button className="button button--send-to-top" onClick={handleSendToTopClick(id)}>
-            Send to top
-          </button>
+          <ButtonStyled onClick={handleSendToTopClick(id)}>Send to top</ButtonStyled>
 
-          <div className="Select">
+          <SelectStyled>
             <label>Scale: </label>
             <Select
               onChange={handleScaleChange(id)}
               options={OPTIONS.SCALES}
               defaultValue={DEFAULT_SCALE}
             />
-          </div>
-          <div className="Select">
+          </SelectStyled>
+          <SelectStyled>
             <label>Shape: </label>
 
             <Select
@@ -59,13 +81,13 @@ const Controls = () => {
               defaultValue={OPTIONS.SHAPES.find(ctor => ctor.value === shape)}
               options={OPTIONS.SHAPES}
             />
-          </div>
-        </div>
+          </SelectStyled>
+        </ControlsPerCtorStyled>
       ))}
       <input name="animation-speed" type="text" onChange={handleAnimationSpeedChange} />
       <Slider />
       <Range />
-    </div>
+    </ControlsStyled>
   )
 }
 

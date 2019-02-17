@@ -11,7 +11,7 @@ import {
   animationStyles
 } from './styles'
 
-const CtorStyles = styled.div`
+const CtorStyled = styled.div`
   width: 40%;
   height: 40%;
   position: absolute;
@@ -26,7 +26,7 @@ const CtorStyles = styled.div`
 
 const Ctor = props => {
   // s = props for styles
-  return <CtorStyles s={props} />
+  return <CtorStyled s={props} />
 }
 
 export default view(Ctor)

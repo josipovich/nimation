@@ -1,7 +1,13 @@
 import React from 'react'
-import reactCSS from 'reactcss'
-import { ChromePicker } from 'react-color'
 import { view } from 'react-easy-state'
+import reactCSS from 'reactcss'
+import styled from 'styled-components'
+import { ChromePicker } from 'react-color'
+
+const ColorPickerStyled = styled.div`
+  margin-bottom: 0.3rem;
+  display: inline-block;
+`
 
 class ColorPicker extends React.Component {
   state = {
@@ -56,7 +62,7 @@ class ColorPicker extends React.Component {
     })
 
     return (
-      <div className="ColorPicker">
+      <ColorPickerStyled>
         <div style={styles.swatch} onClick={this.handleClick}>
           <div style={styles.color} />
         </div>
@@ -66,7 +72,7 @@ class ColorPicker extends React.Component {
             <ChromePicker color={this.state.color} onChange={this.handleChange} />
           </div>
         ) : null}
-      </div>
+      </ColorPickerStyled>
     )
   }
 }

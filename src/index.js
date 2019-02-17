@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import Nimation from './components/Nimation'
 import Controls from './components/Controls/'
-import './styles.scss'
+import './styles.css'
 
 const AppWrapper = styled.div`
   display: flex;
