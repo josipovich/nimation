@@ -2,7 +2,7 @@ import { store } from 'react-easy-state'
 import { COLOR, POSITION, DEFAULT_SCALE } from '../consts'
 
 const Store = store({
-  animationSpeed: 0,
+  animationSpeed: 0.15,
   ctors: [
     {
       id: 0,

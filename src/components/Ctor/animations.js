@@ -11,60 +11,62 @@ export const pulse = ({ scale = 1 }) => keyframes`
   `
 
 export const fly = ({ position }) => {
+  const max = 80
+  const min = -20
   switch (position) {
     case 'top':
       return keyframes`
       0% {
-        top: -20%;
-        left: -20%;
+        top: ${min}%;
+        left: ${min}%;
       }
       100% {
-        top: 80%;
-        left: 80%;
+        top: ${max * 2}%;
+        left: ${max * 2}%;
       }
     `
     case 'bottom':
       return keyframes`
       0% {
-        top: 80%;
-        left: 80%;
+        top: ${max}%;
+        left: ${max}%;
       }
       100% {
-        top: -20%;
-        left: -20%;
+        top: ${min * 2}%;
+        left: ${min * 2}%;
       }
     `
     case 'left':
       return keyframes`
       0% {
-        bottom: -20%;
-        left: -20%;
+        bottom: ${min}%;
+        left: ${min}%;
       }
       100% {
-        bottom: 80%;
-        left: 80%;
+        bottom: ${max * 2}%;
+        left: ${max * 2}%;
       }
     `
     case 'right':
       return keyframes`
       0% {
-        bottom: 80%;
-        left: 80%;
+        bottom: ${max}%;
+        left: ${max}%;
       }
       100% {
-        bottom: -20%;
-        left: -20%;
+        bottom: ${min * 2}%;
+        left: ${min * 2}%;
       }
     `
     default:
       return keyframes`
       0% {
-        top: -20%;
-        left: -20%;
+        top: ${min}%;
+        left: ${min}%;
       }
       100% {
-        top: 80%;
-        left: 80%;
+        top: ${max * 2}%;
+        left: ${max * 2}%;
       }
     `
   }
