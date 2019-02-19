@@ -8,7 +8,6 @@ export const POSITION = {
   RIGHT: 'right',
   BOTTOM: 'bottom'
 }
-
 export const OPTIONS = {
   POSITIONS: [
     { value: 'top', label: 'Top' },
