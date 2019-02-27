@@ -1,13 +1,14 @@
 import { store } from 'react-easy-state'
+import { generateRgba } from '../utils'
 import { COLOR, POSITION, DEFAULT_SCALE } from '../consts'
 
 const Store = store({
   animationSpeed: 0.15,
-  backgroundColor: COLOR.WHITE,
+  backgroundColor: generateRgba(),
   ctors: [
     {
       id: 0,
-      color: COLOR.CREAM,
+      color: generateRgba(),
       position: POSITION.TOP,
       scale: DEFAULT_SCALE.value,
       shape: 'circle',
@@ -17,7 +18,7 @@ const Store = store({
     },
     {
       id: 1,
-      color: COLOR.RED,
+      color: generateRgba(),
       position: POSITION.LEFT,
       scale: DEFAULT_SCALE.value,
       shape: 'square',
@@ -27,7 +28,7 @@ const Store = store({
     },
     {
       id: 2,
-      color: COLOR.GRAY,
+      color: generateRgba(),
       position: POSITION.RIGHT,
       scale: DEFAULT_SCALE.value,
       shape: 'triangle',
@@ -37,7 +38,7 @@ const Store = store({
     },
     {
       id: 3,
-      color: COLOR.ORANGE,
+      color: generateRgba(),
       position: POSITION.BOTTOM,
       scale: DEFAULT_SCALE.value,
       shape: 'square',

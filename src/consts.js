@@ -1,4 +1,4 @@
-import _ from 'lodash'
+import { range } from 'lodash'
 
 export const DEFAULT_SCALE = { label: '1', value: '2' }
 
@@ -28,7 +28,7 @@ export const OPTIONS = {
     { value: 'blue', label: 'Blue' },
     { value: 'red', label: 'Red' }
   ],
-  SCALES: _.range(11).map(i => ({ label: `${i}`, value: `${i * 2}` })),
+  SCALES: range(11).map(i => ({ label: `${i}`, value: `${i * 2}` })),
   SHAPES: [
     { value: 'circle', label: 'Circle' },
     { value: 'square', label: 'Square' },
