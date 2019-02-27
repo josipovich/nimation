@@ -56,6 +56,10 @@ const handleAnimationSpeedChange = ({ target: { value } }) => {
   Store.animationSpeed = value
 }
 
+const handleBackgroundColor = ({ rgb }) => {
+  Store.backgroundColor = rgb
+}
+
 const handleFlyChange = id => e => {
   Store.ctors.find(d => d.id === id).fly = e.target.checked
 }
@@ -99,9 +103,14 @@ const Controls = () => {
         </ControlsPerCtorStyled>
       ))}
 
+      <label> Animation speed: </label>
       <input name="animation-speed" type="text" onChange={handleAnimationSpeedChange} />
-      <Slider />
-      <Range />
+
+      <label> Background color: </label>
+      <ColorPicker color={Store.backgroundColor} onChange={handleBackgroundColor} />
+
+      {/* <Slider />
+      <Range /> */}
     </ControlsStyled>
   )
 }

@@ -1,5 +1,4 @@
 import { keyframes } from 'styled-components'
-import { transformStyles } from './styles'
 
 export const pulse = ({ scale = 1 }) => keyframes`
   0% {
@@ -71,5 +70,3 @@ export const fly = ({ position }) => {
     `
   }
 }
-
-const deleteMe = ''

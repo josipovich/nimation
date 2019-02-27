@@ -1,8 +1,9 @@
 import React from 'react'
 import { view } from 'react-easy-state'
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes, css } from 'styled-components'
 import Ctor from '../Ctor'
 import Store from '../../stores/Store'
+import Controls from '../Controls/'
 
 const spinRight = keyframes`
   0% {
@@ -11,6 +12,18 @@ const spinRight = keyframes`
   100% {
     transform: rotate(359deg);
   }
+`
+
+const backgroundColorStyles = ({ r, g, b, a }) => css`
+  background-color: rgba(${r}, ${g}, ${b}, ${a});
+`
+
+const AppWrapper = styled.div`
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-content: center;
+  ${p => backgroundColorStyles(p.backgroundColor)}
 `
 
 const NimationStyled = styled.div`
@@ -25,11 +38,14 @@ const NimationStyled = styled.div`
 
 const Nimation = () => {
   return (
-    <NimationStyled animationSpeed={Store.animationSpeed} className="Nimation">
-      {Store.ctors.map((ctorProps, i) => (
-        <Ctor order={i + 1} {...ctorProps} />
-      ))}
-    </NimationStyled>
+    <AppWrapper backgroundColor={Store.backgroundColor}>
+      <NimationStyled animationSpeed={Store.animationSpeed} className="Nimation">
+        {Store.ctors.map((ctorProps, i) => (
+          <Ctor order={i + 1} {...ctorProps} />
+        ))}
+      </NimationStyled>
+      <Controls />
+    </AppWrapper>
   )
 }
 

@@ -3,6 +3,7 @@ import { COLOR, POSITION, DEFAULT_SCALE } from '../consts'
 
 const Store = store({
   animationSpeed: 0.15,
+  backgroundColor: COLOR.WHITE,
   ctors: [
     {
       id: 0,
