@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Nimation from './components/Nimation'
+import Spiner from './components/Spiner'
 import './styles.css'
 
-const App = () => <Nimation />
+const App = () => <Spiner />
 
 const rootElement = document.getElementById('root')
 ReactDOM.render(<App />, rootElement)

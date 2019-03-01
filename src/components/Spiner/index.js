@@ -29,7 +29,7 @@ const AppWrapper = styled.div`
   ${p => backgroundColorStyles(p.backgroundColor)}
 `
 
-const NimationStyled = styled.div`
+const SpinerStyled = styled.div`
   margin: auto;
   width: 100px;
   height: 100px;
@@ -42,11 +42,11 @@ const NimationStyled = styled.div`
 const Nimation = () => {
   return (
     <AppWrapper backgroundColor={Store.backgroundColor}>
-      <NimationStyled animationSpeed={Store.animationSpeed} className="Nimation">
+      <SpinerStyled animationSpeed={Store.animationSpeed}>
         {Store.ctors.map((ctorProps, i) => (
           <Shape order={i + 1} {...ctorProps} />
         ))}
-      </NimationStyled>
+      </SpinerStyled>
       <Controls />
     </AppWrapper>
   )
