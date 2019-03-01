@@ -29,12 +29,15 @@ export const OPTIONS = {
     { value: 'red', label: 'Red' }
   ],
   SCALES: range(11).map(i => ({ label: `${i}`, value: `${i * 2}` })),
-  SHAPES: [
-    { value: 'circle', label: 'Circle' },
-    { value: 'square', label: 'Square' },
-    { value: 'triangle', label: 'Triangle' }
-  ]
+  // SHAPES: [
+  //   { value: 'circle', label: 'Circle' },
+  //   { value: 'square', label: 'Square' },
+  //   { value: 'triangle', label: 'Triangle' }
+  // ],
+  SHAPES: ['circle', 'square', 'triangle']
 }
+
+export const DEFAULT_ANIMATION_SPEED = 0.15
 
 export const COLOR = {
   CREAM: {

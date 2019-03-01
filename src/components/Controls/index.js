@@ -1,41 +1,65 @@
 import React from 'react'
 import Select from 'react-select'
 import { view } from 'react-easy-state'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import Slider, { Range } from 'rc-slider'
 import ColorPicker from './ColorPicker'
 
-import { OPTIONS, DEFAULT_SCALE } from '../../consts'
+import { OPTIONS, DEFAULT_ANIMATION_SPEED } from '../../consts'
 import { immutableSplice } from '../../utils'
 import Store from '../../stores/Store'
+import 'rc-slider/assets/index.css'
 
 const ControlsStyled = styled.div`
   position: fixed;
-  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
   padding: 1rem;
+  background: rgba(0, 0, 0, 0.5);
 `
 
-const SelectStyled = styled.div`
+const SliderWrapper = styled.div`
+  width: 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
   margin-bottom: 0.5rem;
 `
 
-const ControlsPerCtorStyled = styled.div`
-  margin-bottom: 2rem;
+const Group = styled.div`
+  display: flex;
+  flex-direction: column;
 `
 
-const ButtonStyled = styled.button`
+const Button = styled.button`
   padding: 0.3rem;
   vertical-align: top;
-  margin-left: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 2px;
+  border: 1px solid #fff;
+  height: 2rem;
+  background: transparent;
+  color: #fff;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 12px;
+  margin-bottom: 0.5rem;
 `
 
-const handleShapeChange = id => ({ value }) => {
-  Store.ctors.find(d => d.id === id).shape = value
+const Checkbox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+`
+
+const Label = styled.label`
+  margin-right: 1rem;
+`
+
+const handleShapeChange = id => value => {
+  Store.ctors.find(d => d.id === id).shape = OPTIONS.SHAPES[value]
 }
 
-const handleScaleChange = id => ({ value }) => {
+const handleScaleChange = id => value => {
   Store.ctors.find(d => d.id === id).scale = value
 }
 
@@ -52,8 +76,8 @@ const handleColorChange = id => ({ rgb }) => {
   Store.ctors.find(d => d.id === id).color = rgb
 }
 
-const handleAnimationSpeedChange = ({ target: { value } }) => {
-  Store.animationSpeed = value
+const handleAnimationSpeedChange = value => {
+  Store.animationSpeed = 1 + (value - 0.5)
 }
 
 const handleBackgroundColor = ({ rgb }) => {
@@ -72,45 +96,55 @@ const Controls = () => {
   return (
     <ControlsStyled>
       {Store.ctors.map(({ color, shape }, id) => (
-        <ControlsPerCtorStyled>
+        <Group>
           <ColorPicker color={color} onChange={handleColorChange(id)} />
 
-          <ButtonStyled onClick={handleSendToTopClick(id)}>Send to top</ButtonStyled>
+          <Button onClick={handleSendToTopClick(id)}>Send to top</Button>
 
-          <SelectStyled>
-            <label>Scale: </label>
-            <Select
-              onChange={handleScaleChange(id)}
-              options={OPTIONS.SCALES}
-              defaultValue={DEFAULT_SCALE}
-            />
-          </SelectStyled>
+          <SliderWrapper>
+            <Label>Scale: </Label>
+            <Slider step={0.1} onChange={handleScaleChange(id)} defaultValue={1} min={0} max={20} />
+          </SliderWrapper>
 
-          <SelectStyled>
-            <label>Shape: </label>
+          <SliderWrapper>
+            <Label>Shape: </Label>
 
-            <Select
+            <Slider
+              step={1}
               onChange={handleShapeChange(id)}
-              defaultValue={OPTIONS.SHAPES.find(ctor => ctor.value === shape)}
-              options={OPTIONS.SHAPES}
+              defaultValue={OPTIONS.SHAPES.indexOf(shape)}
+              min={0}
+              max={2}
             />
-          </SelectStyled>
+          </SliderWrapper>
 
-          <label>Fly: </label>
-          <input name="fly" type="checkbox" onChange={handleFlyChange(id)} defaultChecked />
-          <label>Pulse: </label>
-          <input name="pulse" type="checkbox" onChange={handlePulseChange(id)} defaultChecked />
-        </ControlsPerCtorStyled>
+          <Checkbox>
+            <Label>Fly: </Label>
+            <input name="fly" type="checkbox" onChange={handleFlyChange(id)} defaultChecked />
+          </Checkbox>
+          <Checkbox>
+            <Label>Pulse: </Label>
+            <input name="pulse" type="checkbox" onChange={handlePulseChange(id)} defaultChecked />
+          </Checkbox>
+        </Group>
       ))}
 
-      <label> Animation speed: </label>
-      <input name="animation-speed" type="text" onChange={handleAnimationSpeedChange} />
+      <Group>
+        <Label> Background color: </Label>
+        <ColorPicker color={Store.backgroundColor} onChange={handleBackgroundColor} />
+      </Group>
 
-      <label> Background color: </label>
-      <ColorPicker color={Store.backgroundColor} onChange={handleBackgroundColor} />
-
-      {/* <Slider />
-      <Range /> */}
+      <Group>
+        <Label> Animation speed: </Label>
+        <Slider
+          step={0.01}
+          onChange={handleAnimationSpeedChange}
+          defaultValue={DEFAULT_ANIMATION_SPEED - 1}
+          min={-0.5}
+          max={0}
+        />
+        {/* <input name="animation-speed" type="text" onChange={handleAnimationSpeedChange} /> */}
+      </Group>
     </ControlsStyled>
   )
 }

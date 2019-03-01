@@ -23,6 +23,9 @@ const AppWrapper = styled.div`
   height: 100vh;
   width: 100vw;
   flex-content: center;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 12px;
+  color: white;
   ${p => backgroundColorStyles(p.backgroundColor)}
 `
 

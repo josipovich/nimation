@@ -1,4 +1,5 @@
 import React from 'react'
+import { shape, func } from 'prop-types'
 import { view } from 'react-easy-state'
 import reactCSS from 'reactcss'
 import styled from 'styled-components'
@@ -31,21 +32,22 @@ class ColorPicker extends React.Component {
   render() {
     const styles = reactCSS({
       default: {
-        color: {
-          width: '36px',
-          height: '14px',
-          borderRadius: '2px',
+        colors: {
+          width: '100%',
+          height: '100%',
+          // borderRadius: '2px',
           background: `rgba(${this.state.color.r}, ${this.state.color.g}, ${this.state.color.b}, ${
             this.state.color.a
           })`
         },
         swatch: {
-          padding: '5px',
+          padding: '1px',
           background: '#fff',
-          borderRadius: '1px',
-          boxShadow: '0 0 0 1px #ccc',
+          // boxShadow: '0 0 0 1px #ccc',
           display: 'inline-block',
-          cursor: 'pointer'
+          cursor: 'pointer',
+          width: '100%',
+          height: '2rem'
         },
         popover: {
           position: 'absolute',
@@ -61,20 +63,34 @@ class ColorPicker extends React.Component {
       }
     })
 
+    const {
+      handleClick,
+      handleClose,
+      handleChange,
+      state: { color, displayColorPicker }
+    } = this
+
+    const { swatch, colors, popover, cover } = styles
+
     return (
       <ColorPickerStyled>
-        <div style={styles.swatch} onClick={this.handleClick}>
-          <div style={styles.color} />
+        <div style={swatch} onClick={handleClick}>
+          <div style={colors} />
         </div>
-        {this.state.displayColorPicker ? (
-          <div style={styles.popover}>
-            <div style={styles.cover} onClick={this.handleClose} />
-            <ChromePicker color={this.state.color} onChange={this.handleChange} />
+        {displayColorPicker && (
+          <div style={popover}>
+            <div style={cover} onClick={handleClose} />
+            <ChromePicker color={color} onChange={handleChange} />
           </div>
-        ) : null}
+        )}
       </ColorPickerStyled>
     )
   }
+}
+
+ColorPicker.propTypes = {
+  color: shape({}).isRequired,
+  onChange: func.isRequired
 }
 
 export default view(ColorPicker)

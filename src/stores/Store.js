@@ -1,9 +1,9 @@
 import { store } from 'react-easy-state'
 import { generateRgba } from '../utils'
-import { COLOR, POSITION, DEFAULT_SCALE } from '../consts'
+import { COLOR, POSITION, DEFAULT_SCALE, DEFAULT_ANIMATION_SPEED } from '../consts'
 
 const Store = store({
-  animationSpeed: 0.15,
+  animationSpeed: DEFAULT_ANIMATION_SPEED,
   backgroundColor: generateRgba(),
   ctors: [
     {
