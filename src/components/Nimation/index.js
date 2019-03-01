@@ -1,7 +1,7 @@
 import React from 'react'
 import { view } from 'react-easy-state'
 import styled, { keyframes, css } from 'styled-components'
-import Ctor from '../Ctor'
+import Shape from '../Shape'
 import Store from '../../stores/Store'
 import Controls from '../Controls/'
 
@@ -44,7 +44,7 @@ const Nimation = () => {
     <AppWrapper backgroundColor={Store.backgroundColor}>
       <NimationStyled animationSpeed={Store.animationSpeed} className="Nimation">
         {Store.ctors.map((ctorProps, i) => (
-          <Ctor order={i + 1} {...ctorProps} />
+          <Shape order={i + 1} {...ctorProps} />
         ))}
       </NimationStyled>
       <Controls />
