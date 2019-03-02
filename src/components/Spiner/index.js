@@ -31,7 +31,7 @@ const Spiner = () => {
     <Layout className="Layout" backgroundColor={Store.backgroundColor}>
       <SpinerAnimation className="Spiner" animationSpeed={Store.animationSpeed}>
         {Store.shapes.map((shapeProps, i) => (
-          <Shape order={i + 1} {...shapeProps} />
+          <Shape key={i} order={i + 1} {...shapeProps} />
         ))}
       </SpinerAnimation>
       <Controls />

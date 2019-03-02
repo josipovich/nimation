@@ -8,7 +8,7 @@ html {
   padding: 0;
 }
 
-$black: #232323;
+$black: rgba(31, 4, 4, .85);
 $white: #c5c5af;
 
 .Spiner {
@@ -30,6 +30,13 @@ $white: #c5c5af;
   color: $white;
 }
 
+.Content {
+  display: flex;
+  width: 900px;
+  min-width: 60px;
+  justify-content: space-between;
+}
+
 .Shape {
   width: 40%;
   height: 40%;
@@ -40,32 +47,51 @@ $white: #c5c5af;
 .Controls {
   position: fixed;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   width: 100%;
-  padding: .5rem 2rem;
-  // background: rgba(0, 0, 0, 0.5);
-  background: #232323
+  background: $black;
+
+  &--top {
+    box-shadow: 0 1rem 1.5rem 1.5rem $black;
+    padding: 2rem 2rem 0;
+    
+  }
+
+  &--bottom {
+    box-shadow: 0 0 1.5rem 3.0rem $black;
+    bottom: 0;
+    padding: 0 2rem 2rem;
+    // justify-content: space-between;
+    flex-wrap: nowrap;
+  }
 }
 
 .Group {
   display: flex;
   flex-direction: column;  
   width: 20%;
+  margin-bottom: 0;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
 
   &--animation-speed {
+    padding-top: .55rem;
     padding-left: 1rem;
-    width: 90%;
+    width: 100%;
   }
 
   &--background-color {
     // padding-right: 1rem;
-    width: 5%;
+    width: 2rem;
   }
 }
 
 .Button {
-  padding: 0.3rem;
+  padding: 0.3rem .75rem;
   vertical-align: top;
   border: 1px solid $white;
   height: 2rem;
@@ -74,10 +100,13 @@ $white: #c5c5af;
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 12px;
   margin-bottom: 0.5rem;
+  white-space: nowrap;
+  margin-left: -1px;
+
+  &:hover {cursor: pointer}
 }
 
 .Slider {
-  // width: 10rem;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -94,4 +123,51 @@ $white: #c5c5af;
 .Label {
   margin-right: 1rem;
   white-space: nowrap
+}
+
+
+.Checkbox--wrapper {
+  display: inline-block;
+
+  input[type="checkbox"] {
+    display: none;
+
+    & + label::after {
+      content: none;
+    }
+
+    &:checked + label::after {
+      content: "";
+    }
+  }
+
+  label {
+    position: relative;
+    padding-left: 22px;
+  
+    &:hover {cursor: pointer}
+
+    &::after, &::before {
+      position: absolute;
+      display: inline-block;
+      content: "";
+    }
+
+    &::before{
+      height: 16px;
+      width: 16px;
+      border: 1px solid;
+      left: 4px;
+    }
+    
+    &::after {
+      height: 5px;
+      width: 9px;
+      border-left: 2px solid;
+      border-bottom: 2px solid;  
+      transform: rotate(-45deg);  
+      left: 8px;
+      top: 4px;
+    }
+  }  
 }
