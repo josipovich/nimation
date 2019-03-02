@@ -9,12 +9,9 @@ import {
   triangleStyles,
   positionStyles,
   animationStyles
-} from './styles'
+} from './../styles'
 
-const CtorStyled = styled.div`
-  width: 40%;
-  height: 40%;
-  position: absolute;
+const ShapeStyled = styled.div`
   ${p => zIndexStyles(p.s)}
   ${p => colorStyles(p.s)}
   ${p => `transform: ${transformStyles(p.s)}`}
@@ -24,9 +21,9 @@ const CtorStyled = styled.div`
   ${p => animationStyles(p.s)}
 `
 
-const Ctor = props => {
+const Shape = props => {
   // s = props for styles
-  return <CtorStyled s={props} />
+  return <ShapeStyled className="Shape" s={props} />
 }
 
-export default view(Ctor)
+export default view(Shape)

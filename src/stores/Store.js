@@ -5,7 +5,7 @@ import { COLOR, POSITION, DEFAULT_SCALE, DEFAULT_ANIMATION_SPEED } from '../cons
 const Store = store({
   animationSpeed: DEFAULT_ANIMATION_SPEED,
   backgroundColor: generateRgba(),
-  ctors: [
+  shapes: [
     {
       id: 0,
       color: generateRgba(),

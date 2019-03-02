@@ -18,38 +18,25 @@ const backgroundColorStyles = ({ r, g, b, a }) => css`
   background-color: rgba(${r}, ${g}, ${b}, ${a});
 `
 
-const AppWrapper = styled.div`
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  flex-content: center;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 12px;
-  color: white;
+const Layout = styled.div`
   ${p => backgroundColorStyles(p.backgroundColor)}
 `
 
-const SpinerStyled = styled.div`
-  margin: auto;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  position: relative;
-  transform: rotate(45deg) scale(1);
+const SpinerAnimation = styled.div`
   animation: ${spinRight} ${p => p.animationSpeed}s linear infinite;
 `
 
-const Nimation = () => {
+const Spiner = () => {
   return (
-    <AppWrapper backgroundColor={Store.backgroundColor}>
-      <SpinerStyled animationSpeed={Store.animationSpeed}>
-        {Store.ctors.map((ctorProps, i) => (
-          <Shape order={i + 1} {...ctorProps} />
+    <Layout className="Layout" backgroundColor={Store.backgroundColor}>
+      <SpinerAnimation className="Spiner" animationSpeed={Store.animationSpeed}>
+        {Store.shapes.map((shapeProps, i) => (
+          <Shape order={i + 1} {...shapeProps} />
         ))}
-      </SpinerStyled>
+      </SpinerAnimation>
       <Controls />
-    </AppWrapper>
+    </Layout>
   )
 }
 
-export default view(Nimation)
+export default view(Spiner)
