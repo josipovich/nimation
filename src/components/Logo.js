@@ -1,5 +1,6 @@
 import React from 'react'
 import { string } from 'prop-types'
+import { APP_NAME } from './../consts'
 
 const Logo = ({ color }) => {
   return (
@@ -36,7 +37,7 @@ const Logo = ({ color }) => {
           />
         </path>
       </svg>
-      <div className="Logo__text">SPINER</div>
+      <div className="Logo__text">{APP_NAME}</div>
     </div>
   )
 }

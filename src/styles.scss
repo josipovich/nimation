@@ -50,11 +50,12 @@ $white: #c5c5af;
   }
 
   &__text {
-    font-size: 2rem;
+    font-size: 1.7rem;
     display: inline-block;
     vertical-align: top;
     margin-top: -0.6rem;
-    margin-left: 2.3rem;
+    margin-left: 1.5rem;
+    padding-top: .25rem;
   }
 }
 
@@ -62,7 +63,6 @@ $white: #c5c5af;
   width: 40%;
   height: 40%;
   position: absolute;
-
 }
 
 .Controls {
@@ -166,7 +166,7 @@ $white: #c5c5af;
     opacity: 1;
     height: 2rem;
     width: 2rem;
-    transition: 0.25s opacity ease-in-out;
+    transition: 0.15s opacity ease-in-out;
     transform: scale(1.5) rotate(0);
     padding: .37rem .2rem .2rem .075rem;
   }
@@ -261,7 +261,7 @@ $white: #c5c5af;
   height: .8rem;
   opacity: 0;
   transform: rotate(90deg);
-  transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.15s ease-in-out;
 
   & > div:last-of-type {
     margin-bottom: 0;
@@ -285,6 +285,10 @@ $white: #c5c5af;
   transition: opacity .6s ease-in-out 3s;
 }
 
+.LogoAndClose .Content {
+  position: relative;
+}
+
 .LogoAndClose--hidden {
   opacity: 0;
   &:hover {
@@ -302,10 +306,18 @@ $white: #c5c5af;
   padding: 3px;
   border-radius: 50%;
   border: 1px solid transparent;
-
+  transition: 
+    opacity .4s ease-in-out .2s;
   &:hover {
     border: 1px solid $white;
   }
+}
+
+
+.Github-logo--hidden {
+  opacity: 0;
+  cursor: auto;
+  // transition: opacity .5s ease-in-out;
 }
 
 .Button-refresh {
@@ -317,6 +329,8 @@ $white: #c5c5af;
   border: none;
   outline: none;
   margin-right: 1rem;
+  transition: opacity .4s ease-in-out .2s;
+  cursor: pointer;
 
   img {
     height: 2.35rem;
@@ -327,9 +341,13 @@ $white: #c5c5af;
 
     &:hover {
       border: 1px solid $white;
-      cursor: pointer;
     }
   }
+}
+
+.Button-refresh--hidden {
+  opacity: 0;
+  cursor: auto !important;
 }
 
 @media all and (max-width: 1350px) {
@@ -340,7 +358,7 @@ $white: #c5c5af;
     margin-bottom: 2rem;
   }
   .Controls__close {
-    position: relative;
+    position: absolute;
     top: 2rem;
     right: 0;
     width: auto;
@@ -360,5 +378,11 @@ $white: #c5c5af;
     position: relative;
     left: 0;
     bottom: 6px;
+  }
+}
+
+@media all and (max-width: 665px) {
+  .Logo {
+    width: 100%;
   }
 }

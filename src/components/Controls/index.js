@@ -65,6 +65,15 @@ const Controls = () => {
   const logoAndCloseClasses = classNames('LogoAndClose', {
     'LogoAndClose--hidden': !Store.menuIsVisible
   })
+
+  const refreshButtonClasses = classNames('Button-refresh', {
+    'Button-refresh--hidden': !Store.menuIsVisible
+  })
+
+  const githubLogoClasses = classNames('Github-logo', {
+    'Github-logo--hidden': !Store.menuIsVisible
+  })
+
   return (
     <Fragment>
       <div className={logoAndCloseClasses}>
@@ -143,7 +152,7 @@ const Controls = () => {
         className={`Controls Controls--bottom${!Store.menuIsVisible ? ' Controls--hidden' : ''}`}
       >
         <div className="Content">
-          <button onClick={handleRefreshClick} className="Button-refresh">
+          <button onClick={handleRefreshClick} className={refreshButtonClasses}>
             <img src={refreshIcon} />
           </button>
           <div className="Group Group--background-color">
@@ -166,7 +175,7 @@ const Controls = () => {
             />
           </div>
           <a href="https://github.com/josipovich">
-            <img className="Github-logo" src={githubLogo} />
+            <img className={githubLogoClasses} src={githubLogo} />
           </a>
         </div>
       </div>

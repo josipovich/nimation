@@ -4,6 +4,8 @@ export const DEFAULT_SCALE = { label: '1', value: '2' }
 
 export const POSITIONS = ['top', 'left', 'right', 'bottom']
 
+export const APP_NAME = 'NIMATION'
+
 export const OPTIONS = {
   POSITIONS: [
     { value: 'top', label: 'Top' },
@@ -33,7 +35,7 @@ export const OPTIONS = {
 
 export const SHAPES = ['circle', 'square', 'triangle']
 
-export const DEFAULT_ANIMATION_SPEED = 0.1
+export const DEFAULT_ANIMATION_SPEED = 0.0573
 
 export const COLOR = {
   CREAM: {
