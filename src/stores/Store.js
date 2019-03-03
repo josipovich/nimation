@@ -1,17 +1,18 @@
 import { store } from 'react-easy-state'
-import { generateRgba } from '../utils'
-import { COLOR, POSITION, DEFAULT_SCALE, DEFAULT_ANIMATION_SPEED } from '../consts'
+import { generateRgba, randomShape } from '../utils'
+import { POSITIONS, DEFAULT_SCALE, DEFAULT_ANIMATION_SPEED } from '../consts'
 
 const Store = store({
   animationSpeed: DEFAULT_ANIMATION_SPEED,
   backgroundColor: generateRgba(),
+  menuIsVisible: true,
   shapes: [
     {
       id: 0,
       color: generateRgba(),
-      position: POSITION.TOP,
+      position: POSITIONS[0],
       scale: DEFAULT_SCALE.value,
-      shape: 'circle',
+      shape: randomShape(),
       fly: true,
       pulse: true
       // order: 1
@@ -19,9 +20,9 @@ const Store = store({
     {
       id: 1,
       color: generateRgba(),
-      position: POSITION.LEFT,
+      position: POSITIONS[1],
       scale: DEFAULT_SCALE.value,
-      shape: 'square',
+      shape: randomShape(),
       fly: true,
       pulse: true
       // order: 2
@@ -29,9 +30,9 @@ const Store = store({
     {
       id: 2,
       color: generateRgba(),
-      position: POSITION.RIGHT,
+      position: POSITIONS[2],
       scale: DEFAULT_SCALE.value,
-      shape: 'triangle',
+      shape: randomShape(),
       fly: true,
       pulse: true
       // order: 3
@@ -39,9 +40,9 @@ const Store = store({
     {
       id: 3,
       color: generateRgba(),
-      position: POSITION.BOTTOM,
+      position: POSITIONS[3],
       scale: DEFAULT_SCALE.value,
-      shape: 'square',
+      shape: randomShape(),
       fly: true,
       pulse: true
       // order: 4

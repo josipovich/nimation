@@ -6,6 +6,7 @@ body,
 html {
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 $black: rgba(31, 4, 4, .85);
@@ -37,6 +38,26 @@ $white: #c5c5af;
   justify-content: space-between;
 }
 
+.Logo {
+  position: fixed;
+  left: 2rem;
+  top: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid $white;
+  
+  svg {
+    width: 2rem;
+  }
+
+  &__text {
+    font-size: 2rem;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: -0.6rem;
+    margin-left: 2.3rem;
+  }
+}
+
 .Shape {
   width: 40%;
   height: 40%;
@@ -51,20 +72,40 @@ $white: #c5c5af;
   flex-wrap: wrap;
   width: 100%;
   background: $black;
+  transition: 
+    top 0.25s cubic-bezier(0.39, 0.575, 0.565, 1), 
+    bottom 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+  
 
   &--top {
     box-shadow: 0 1rem 1.5rem 1.5rem $black;
     padding: 2rem 2rem 0;
-    
+    top: 0;
   }
 
   &--bottom {
     box-shadow: 0 0 1.5rem 3.0rem $black;
     bottom: 0;
     padding: 0 2rem 2rem;
-    // justify-content: space-between;
     flex-wrap: nowrap;
   }
+}
+
+
+.Controls__close {
+  position: fixed;
+  width: 3rem;
+  top: 2rem;
+  right: 1rem;
+  height: 3rem;
+}
+
+.Controls--hidden.Controls--top {
+  top: -22rem;
+}
+
+.Controls--hidden.Controls--bottom {
+  bottom: -20rem;
 }
 
 .Group {
@@ -76,16 +117,16 @@ $white: #c5c5af;
   &__row {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 0.5rem;
   }
 
   &--animation-speed {
-    padding-top: .55rem;
+    padding-top: 0.55rem;
     padding-left: 1rem;
     width: 100%;
   }
 
   &--background-color {
-    // padding-right: 1rem;
     width: 2rem;
   }
 }
@@ -102,9 +143,49 @@ $white: #c5c5af;
   margin-bottom: 0.5rem;
   white-space: nowrap;
   margin-left: -1px;
+  outline: none;
 
-  &:hover {cursor: pointer}
+  &:hover {
+    cursor: pointer;
+  }
 }
+
+
+.Button--close {
+  color: $white;
+  border: none;
+  border: 1px solid $white;
+  margin-bottom: 0;
+  width: 2rem;
+  height: 2rem;
+  transition: transform .35s ease-in-out;
+  transform: rotate(0);
+  position: relative;
+
+  svg {
+    opacity: 1;
+    height: 2rem;
+    width: 2rem;
+    transition: 0.25s opacity ease-in-out;
+    transform: scale(1.5) rotate(0);
+    padding: .37rem .2rem .2rem .075rem;
+  }
+}
+
+.Button--menu-hidden {
+  transform: rotate(90deg);
+
+  svg {
+    opacity: 0;
+    display: none;
+  }
+
+  .Burger-icon {
+    opacity: 1;
+  }
+
+}
+
 
 .Slider {
   display: flex;
@@ -170,4 +251,114 @@ $white: #c5c5af;
       top: 4px;
     }
   }  
+}
+
+.Burger-icon {
+  position: absolute;
+  top: 0.55rem;
+  left: 0.55rem;
+  width: 1.1rem;
+  height: .8rem;
+  opacity: 0;
+  transform: rotate(90deg);
+  transition: opacity 0.25s ease-in-out;
+
+  & > div:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.Burger-icon__rect {
+  background: $white;
+  height: .2rem;
+  margin-bottom: .3rem;
+}
+
+.LogoAndClose {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  z-index: 2;
+  padding: 0 2rem;
+  transition: opacity .6s ease-in-out 3s;
+}
+
+.LogoAndClose--hidden {
+  opacity: 0;
+  &:hover {
+    transition: opacity .6s ease-in-out;
+    opacity: 1;
+  }
+}
+
+.Github-logo  {
+  width: 2.5rem;
+  height: 2.5rem;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 3px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+
+  &:hover {
+    border: 1px solid $white;
+  }
+}
+
+.Button-refresh {
+  display: flex;
+  position: fixed;
+  left: 2rem;
+  bottom: 1.8rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  margin-right: 1rem;
+
+  img {
+    height: 2.35rem;
+    width: 2.35rem;
+    padding: 1px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+
+    &:hover {
+      border: 1px solid $white;
+      cursor: pointer;
+    }
+  }
+}
+
+@media all and (max-width: 1350px) {
+  .Logo {
+    position: relative;
+    top: 2rem;
+    left: 0;
+    margin-bottom: 2rem;
+  }
+  .Controls__close {
+    position: relative;
+    top: 2rem;
+    right: 0;
+    width: auto;
+  }
+  .Controls--top {
+    padding-top: 8rem;
+  }
+  .Controls--bottom .Slider {
+    padding-right: 2rem;
+  }
+  .Github-logo {
+    bottom: 0.25rem;
+    right: 0;
+    position: relative;
+  }
+  .Button-refresh {
+    position: relative;
+    left: 0;
+    bottom: 6px;
+  }
 }

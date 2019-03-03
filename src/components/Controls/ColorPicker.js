@@ -1,6 +1,7 @@
 import React from 'react'
-import { shape, func, string } from 'prop-types'
+import { shape, func, string, bool } from 'prop-types'
 import { view } from 'react-easy-state'
+import Store from './../../stores/Store'
 import reactCSS from 'reactcss'
 import styled from 'styled-components'
 import { ChromePicker } from 'react-color'
@@ -35,8 +36,12 @@ class ColorPicker extends React.Component {
           })`
         },
         swatch: {
-          padding: '1px',
-          background: '#c5c5af',
+          border: '1px solid #c5c5af',
+          background: this.props.layerBetween
+            ? `rgba(${this.props.layerBetween.r},${this.props.layerBetween.g},${
+              this.props.layerBetween.b
+            },${this.props.layerBetween.a})`
+            : 'none',
           display: 'inline-block',
           cursor: 'pointer',
           width: '100%',
@@ -56,7 +61,9 @@ class ColorPicker extends React.Component {
         },
         wrapper: {
           width: this.props.width,
-          display: 'inline-block'
+          display: 'inline-block',
+          height: '2rem',
+          background: '#fff'
         }
       }
     })
@@ -89,11 +96,13 @@ class ColorPicker extends React.Component {
 ColorPicker.propTypes = {
   color: shape({}).isRequired,
   onChange: func.isRequired,
-  width: string
+  width: string,
+  whiteBg: bool
 }
 
 ColorPicker.defaultProps = {
-  width: '100%'
+  width: '100%',
+  whiteBg: false
 }
 
 export default view(ColorPicker)
