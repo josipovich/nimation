@@ -1,5 +1,7 @@
 import React from 'react'
 import Slider from 'rc-slider'
+import cssVars from '../../cssVars'
+import styled from 'styled-components'
 
 const styles = {
   handle: {
@@ -7,34 +9,46 @@ const styles = {
     border: 'none',
     width: '3px',
     outline: 'none',
-    backgroundColor: '#c5c5af',
+    backgroundColor: cssVars.white,
     boxShadow: 'none',
     marginLeft: '-1px',
     marginBottom: '1px'
   },
   track: {
-    backgroundColor: '#c5c5af',
+    backgroundColor: cssVars.white,
     height: '3px',
     borderRadius: '0'
   },
   rail: {
-    backgroundColor: '#c5c5af',
+    backgroundColor: cssVars.white,
     height: '1px',
     marginTop: '1px'
   }
 }
 
+const SliderStyled = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+`
+
+const Label = styled.label`
+  margin-right: 1rem;
+  white-space: nowrap;
+`
+
 const Component = props => {
   return (
-    <div className="Slider">
-      <label className="Label">{props.label}</label>
+    <SliderStyled>
+      <Label>{props.label}</Label>
       <Slider
         {...props}
         handleStyle={styles.handle}
         trackStyle={styles.track}
         railStyle={styles.rail}
       />
-    </div>
+    </SliderStyled>
   )
 }
 

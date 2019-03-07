@@ -9,7 +9,7 @@ import {
   triangleStyles,
   positionStyles,
   animationStyles
-} from './../styles'
+} from './styles'
 
 const ShapeStyled = styled.div`
   ${p => zIndexStyles(p.s)}
@@ -22,7 +22,6 @@ const ShapeStyled = styled.div`
 `
 
 const Shape = props => {
-  // s = props for styles
   return <ShapeStyled className="Shape" s={props} />
 }
 

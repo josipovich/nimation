@@ -1,9 +1,8 @@
 import React from 'react'
 import { view } from 'react-easy-state'
-import styled, { keyframes, css } from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import Shape from '../Shape'
 import Store from '../../stores/Store'
-import Controls from '../Controls/'
 
 const spinRight = keyframes`
   0% {
@@ -14,29 +13,22 @@ const spinRight = keyframes`
   }
 `
 
-const backgroundColorStyles = ({ r, g, b, a }) => css`
-  background-color: rgba(${r}, ${g}, ${b}, ${a});
-`
-
-const Layout = styled.div`
-  ${p => backgroundColorStyles(p.backgroundColor)}
-`
-
-const SpinerAnimation = styled.div`
+const StyledSpiner = styled.div`
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  position: relative;
+  transform: rotate(45deg) scale(1);
   animation: ${spinRight} ${p => p.animationSpeed}s linear infinite;
 `
 
-const Spiner = () => {
-  return (
-    <Layout className="Layout" backgroundColor={Store.backgroundColor}>
-      <SpinerAnimation className="Spiner" animationSpeed={Store.animationSpeed}>
-        {Store.shapes.map((shapeProps, i) => (
-          <Shape key={i} order={i + 1} {...shapeProps} />
-        ))}
-      </SpinerAnimation>
-      <Controls />
-    </Layout>
-  )
-}
+const Spiner = () => (
+  <StyledSpiner animationSpeed={Store.animationSpeed}>
+    {Store.shapes.map((shapeProps, i) => (
+      <Shape key={i} order={i + 1} {...shapeProps} />
+    ))}
+  </StyledSpiner>
+)
 
 export default view(Spiner)

@@ -26,11 +26,6 @@ export const OPTIONS = {
     { value: 'red', label: 'Red' }
   ],
   SCALES: range(11).map(i => ({ label: `${i}`, value: `${i * 2}` }))
-  // SHAPES: [
-  //   { value: 'circle', label: 'Circle' },
-  //   { value: 'square', label: 'Square' },
-  //   { value: 'triangle', label: 'Triangle' }
-  // ],
 }
 
 export const SHAPES = ['circle', 'square', 'triangle']
