@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { CSS } from '../consts'
+import { CSS } from '../../consts'
 
 const Button = styled.button`
   padding: 0.3rem 0.75rem;

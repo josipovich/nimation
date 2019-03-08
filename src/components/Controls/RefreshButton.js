@@ -2,6 +2,7 @@ import React from 'react'
 import { bool } from 'prop-types'
 import styled, { css } from 'styled-components'
 import refreshIcon from '../../assets/refresh.svg'
+import { CSS } from '../../consts'
 
 const handleRefreshClick = () => {
   window.location.reload()
@@ -42,7 +43,7 @@ const RefreshButtonImage = styled.img`
   border: 1px solid transparent;
 
   &:hover {
-    border: 1px solid $white;
+    border: 1px solid ${CSS.white};
   }
 `
 

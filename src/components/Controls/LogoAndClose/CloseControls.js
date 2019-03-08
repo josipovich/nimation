@@ -3,7 +3,7 @@ import { bool } from 'prop-types'
 import styled from 'styled-components'
 import Store from '../../../stores/Store'
 import { CSS } from '../../../consts'
-import Button from '../../Button'
+import Button from '../../Styled/Button'
 
 const handleMenuClose = () => {
   Store.menuIsVisible = !Store.menuIsVisible

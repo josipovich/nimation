@@ -2,7 +2,7 @@ import React from 'react'
 import { bool } from 'prop-types'
 import styled, { css } from 'styled-components'
 import githubLogo from '../../assets/github.svg'
-import { GITHUB_URL } from '../../consts'
+import { GITHUB_URL, CSS } from '../../consts'
 
 const StyledGithubIcon = styled.img`
   width: 2.5rem;
@@ -16,21 +16,22 @@ const StyledGithubIcon = styled.img`
   transition: opacity 0.4s ease-in-out 0.2s;
 
   ${p =>
-    p.menuIsVisible
+    !p.menuIsVisible
       ? css`
           opacity: 0;
           cursor: auto;
         `
       : ''}
 
-  &:hover {
-    border: 1px solid $white;
+  :hover {
+    border: 1px solid ${CSS.white};
   }
 
   @media all and (max-width: 1350px) {
     bottom: 0.25rem;
     right: 0;
     position: relative;
+    margin-left: 1.5rem;
   }
 `
 

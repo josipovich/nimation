@@ -6,8 +6,8 @@ import { SHAPES } from '../../consts'
 import Checkbox from './Checkbox'
 import ColorPicker from './ColorPicker'
 import Slider from './Slider'
-import { Group, GroupRow } from '../Groups'
-import Button from '../Button'
+import { Group, GroupRow } from '../Styled/Groups'
+import Button from '../Styled/Button'
 
 const handleShapeChange = id => value => {
   Store.shapes.find(d => d.id === id).shape = SHAPES[value]

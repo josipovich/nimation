@@ -1,7 +1,7 @@
 import React from 'react'
 import { shape, bool } from 'prop-types'
 import styled, { css } from 'styled-components'
-import Content from '../../Content'
+import Content from '../../Styled/Content'
 import CloseControls from './CloseControls'
 import Logo from './Logo'
 
