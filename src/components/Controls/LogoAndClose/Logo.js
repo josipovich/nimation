@@ -1,10 +1,48 @@
 import React from 'react'
 import { string } from 'prop-types'
-import { APP_NAME } from './../consts'
+import { APP_NAME } from '../../../consts'
+import styled from 'styled-components'
+import cssVars from '../../../cssVars'
+
+const StyledLogo = styled.div`
+  position: fixed;
+  left: 2rem;
+  top: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid ${cssVars.white};
+
+  svg {
+    width: 2rem;
+  }
+
+  @media all and (max-width: 1350px) {
+    .Logo {
+      position: relative;
+      top: 2rem;
+      left: 0;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media all and (max-width: 665px) {
+    .Logo {
+      width: 100%;
+    }
+  }
+`
+
+const AppName = styled.div`
+  font-size: 1.7rem;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: -0.6rem;
+  margin-left: 1.5rem;
+  padding-top: 0.25rem;
+`
 
 const Logo = ({ color }) => {
   return (
-    <div className="Logo">
+    <StyledLogo>
       <svg width="2rem" height="2rem" viewBox="0 0 135 135" xmlns="http://www.w3.org/2000/svg">
         <path
           fill={`rgba(${color.r},${color.g},${color.b}, 1)`}
@@ -37,8 +75,8 @@ const Logo = ({ color }) => {
           />
         </path>
       </svg>
-      <div className="Logo__text">{APP_NAME}</div>
-    </div>
+      <AppName>{APP_NAME}</AppName>
+    </StyledLogo>
   )
 }
 

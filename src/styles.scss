@@ -12,12 +12,6 @@ html {
 $black: rgba(31, 4, 4, .85);
 $white: #c5c5af;
 
-.Content {
-  display: flex;
-  width: 900px;
-  min-width: 60px;
-  justify-content: space-between;
-}
 
 .Logo {
   position: fixed;
@@ -72,15 +66,6 @@ $white: #c5c5af;
   }
 }
 
-
-.Controls__close {
-  position: fixed;
-  width: 3rem;
-  top: 2rem;
-  right: 1rem;
-  height: 3rem;
-}
-
 .Controls--hidden.Controls--top {
   top: -22rem;
 }
@@ -112,105 +97,12 @@ $white: #c5c5af;
   }
 }
 
-.Button {
-  padding: 0.3rem .75rem;
-  vertical-align: top;
-  border: 1px solid $white;
-  height: 2rem;
-  background: transparent;
-  color: $white;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 12px;
-  margin-bottom: 0.5rem;
-  white-space: nowrap;
-  margin-left: -1px;
-  outline: none;
-
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-
-.Button--close {
-  color: $white;
-  border: none;
-  border: 1px solid $white;
-  margin-bottom: 0;
-  width: 2rem;
-  height: 2rem;
-  transition: transform .35s ease-in-out;
-  transform: rotate(0);
-  position: relative;
-
-  svg {
-    opacity: 1;
-    height: 2rem;
-    width: 2rem;
-    transition: 0.15s opacity ease-in-out;
-    transform: scale(1.5) rotate(0);
-    padding: .37rem .2rem .2rem .075rem;
-  }
-}
-
-.Button--menu-hidden {
-  transform: rotate(90deg);
-
-  svg {
-    opacity: 0;
-    display: none;
-  }
-
-  .Burger-icon {
-    opacity: 1;
-  }
-
-}
-
-
-
-.Burger-icon {
-  position: absolute;
-  top: 0.55rem;
-  left: 0.55rem;
-  width: 1.1rem;
-  height: .8rem;
-  opacity: 0;
-  transform: rotate(90deg);
-  transition: opacity 0.15s ease-in-out;
-
-  & > div:last-of-type {
-    margin-bottom: 0;
-  }
-}
-
-.Burger-icon__rect {
-  background: $white;
-  height: .2rem;
-  margin-bottom: .3rem;
-}
-
-.LogoAndClose {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-  z-index: 2;
-  padding: 0 2rem;
-  transition: opacity .6s ease-in-out 3s;
-}
 
 .LogoAndClose .Content {
-  position: relative;
 }
 
 .LogoAndClose--hidden {
-  opacity: 0;
-  &:hover {
-    transition: opacity .6s ease-in-out;
-    opacity: 1;
-  }
+
 }
 
 .Github-logo  {
@@ -267,18 +159,6 @@ $white: #c5c5af;
 }
 
 @media all and (max-width: 1350px) {
-  .Logo {
-    position: relative;
-    top: 2rem;
-    left: 0;
-    margin-bottom: 2rem;
-  }
-  .Controls__close {
-    position: absolute;
-    top: 2rem;
-    right: 0;
-    width: auto;
-  }
   .Controls--top {
     padding-top: 8rem;
   }
@@ -294,11 +174,5 @@ $white: #c5c5af;
     position: relative;
     left: 0;
     bottom: 6px;
-  }
-}
-
-@media all and (max-width: 665px) {
-  .Logo {
-    width: 100%;
   }
 }
