@@ -4,7 +4,7 @@ import ColorPicker from './ColorPicker'
 import classNames from 'classnames'
 import Slider from './Slider'
 import { DEFAULT_ANIMATION_SPEED, GITHUB_URL } from '../../consts'
-import cssVars from '../../cssVars'
+import { CSS } from '../../consts'
 import Store from '../../stores/Store'
 import 'rc-slider/assets/index.css'
 import styled, { css } from 'styled-components'
@@ -21,13 +21,13 @@ const StyledControls = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
-  background: ${cssVars.black};
+  background: ${CSS.black};
   transition: top 0.25s cubic-bezier(0.39, 0.575, 0.565, 1),
     bottom 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
 `
 
 const ControlsTop = styled(StyledControls)`
-  box-shadow: 0 1rem 1.5rem 1.5rem ${cssVars.black};
+  box-shadow: 0 1rem 1.5rem 1.5rem ${CSS.black};
   padding: 2rem 2rem 0;
   top: 0;
 
@@ -44,7 +44,7 @@ const ControlsTop = styled(StyledControls)`
 `
 
 const ControlsBottom = styled(StyledControls)`
-  box-shadow: 0 0 1.5rem 3rem ${cssVars.black};
+  box-shadow: 0 0 1.5rem 3rem ${CSS.black};
   bottom: 0;
   padding: 0 2rem 2rem;
   flex-wrap: nowrap;

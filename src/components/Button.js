@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import cssVars from '../cssVars'
+import { CSS } from '../consts'
 
 const Button = styled.button`
   padding: 0.3rem 0.75rem;
@@ -7,7 +7,7 @@ const Button = styled.button`
   border: 1px solid $white;
   height: 2rem;
   background: transparent;
-  color: ${cssVars.white};
+  color: ${CSS.white};
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 12px;
   margin-bottom: 0.5rem;

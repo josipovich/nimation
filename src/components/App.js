@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 import Store from '../stores/Store'
 import Spiner from './Spiner'
 import Controls from './Controls/'
-import cssVars from '../cssVars'
+import { CSS } from '../consts'
 
 const backgroundColorStyles = ({ r, g, b, a }) => css`
   background-color: rgba(${r}, ${g}, ${b}, ${a});
@@ -17,7 +17,7 @@ const Layout = styled.div`
   flex-content: center;
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 12px;
-  color: ${cssVars.white};
+  color: ${CSS.white};
   ${p => backgroundColorStyles(p.backgroundColor)}
 `
 

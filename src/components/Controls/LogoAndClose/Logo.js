@@ -1,15 +1,14 @@
 import React from 'react'
 import { string } from 'prop-types'
-import { APP_NAME } from '../../../consts'
+import { APP_NAME, CSS } from '../../../consts'
 import styled from 'styled-components'
-import cssVars from '../../../cssVars'
 
 const StyledLogo = styled.div`
   position: fixed;
   left: 2rem;
   top: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid ${cssVars.white};
+  border-bottom: 1px solid ${CSS.white};
 
   svg {
     width: 2rem;

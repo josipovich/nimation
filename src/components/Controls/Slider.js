@@ -1,6 +1,6 @@
 import React from 'react'
 import Slider from 'rc-slider'
-import cssVars from '../../cssVars'
+import { CSS } from '../../consts'
 import styled from 'styled-components'
 
 const styles = {
@@ -9,18 +9,18 @@ const styles = {
     border: 'none',
     width: '3px',
     outline: 'none',
-    backgroundColor: cssVars.white,
+    backgroundColor: CSS.white,
     boxShadow: 'none',
     marginLeft: '-1px',
     marginBottom: '1px'
   },
   track: {
-    backgroundColor: cssVars.white,
+    backgroundColor: CSS.white,
     height: '3px',
     borderRadius: '0'
   },
   rail: {
-    backgroundColor: cssVars.white,
+    backgroundColor: CSS.white,
     height: '1px',
     marginTop: '1px'
   }

@@ -2,7 +2,7 @@ import React from 'react'
 import { bool } from 'prop-types'
 import styled from 'styled-components'
 import Store from '../../../stores/Store'
-import cssVars from '../../../cssVars'
+import { CSS } from '../../../consts'
 import Button from '../../Button'
 
 const handleMenuClose = () => {
@@ -25,9 +25,9 @@ const StyledCloseControls = styled.div`
 `
 
 const CloseButton = styled(Button)`
-  color: ${cssVars.white};
+  color: ${CSS.white};
   border: none;
-  border: 1px solid ${cssVars.white};
+  border: 1px solid ${CSS.white};
   margin-bottom: 0;
   width: 2rem;
   height: 2rem;
@@ -67,7 +67,7 @@ const BurgerIcon = styled.div`
 `
 
 const BurgerLine = styled.div`
-  background: ${cssVars.white};
+  background: ${CSS.white};
   height: 0.2rem;
   margin-bottom: 0.3rem;
 `
@@ -85,7 +85,7 @@ const CloseControls = ({ menuIsVisible }) => (
           y1="11"
           x2="11"
           y2="1"
-          stroke={cssVars.white}
+          stroke={CSS.white}
           strokeWidth="2"
         />
         <line
@@ -93,7 +93,7 @@ const CloseControls = ({ menuIsVisible }) => (
           y1="1"
           x2="11"
           y2="11"
-          stroke={cssVars.white}
+          stroke={CSS.white}
           strokeWidth="2"
         />
       </Svg>

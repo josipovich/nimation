@@ -65,4 +65,9 @@ export const COLOR = {
   }
 }
 
+export const CSS = {
+  white: '#c5c5af',
+  black: 'rgba(31, 4, 4, .85)'
+}
+
 export const GITHUB_URL = 'https://github.com/josipovich'
