@@ -62,7 +62,12 @@ const Checkbox = ({ id, onChange, label, checked, name }) => (
   <StyledCheckbox>
     <label>{label}</label>
     <CheckboxWrapper>
-      <input defaultChecked={checked} type="checkbox" onChange={onChange} id={`${name}-${id}`} />
+      <input
+        defaultChecked={checked}
+        type="checkbox"
+        onChange={onChange}
+        id={`${name}-${id}`}
+      />
       <label htmlFor={`${name}-${id}`} />
     </CheckboxWrapper>
   </StyledCheckbox>

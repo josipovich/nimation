@@ -1,10 +1,10 @@
 import React from 'react'
 import { view } from 'react-easy-state'
 import styled, { css } from 'styled-components'
-import Store from '../stores/Store'
-import Spiner from './Spiner'
-import Controls from './Controls/'
-import { CSS } from '../consts'
+import Store from 'stores/Store'
+import Spiner from 'components/Spiner'
+import Controls from 'components/Controls/'
+import { CSS } from 'consts'
 
 const backgroundColorStyles = ({ r, g, b, a }) => css`
   background-color: rgba(${r}, ${g}, ${b}, ${a});

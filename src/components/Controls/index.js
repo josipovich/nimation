@@ -1,19 +1,21 @@
 import React, { Fragment } from 'react'
 import { view } from 'react-easy-state'
-import ColorPicker from './ColorPicker'
-import classNames from 'classnames'
-import Slider from './Slider'
-import { DEFAULT_ANIMATION_SPEED } from '../../consts'
-import { CSS } from '../../consts'
-import Store from '../../stores/Store'
-import 'rc-slider/assets/index.css'
 import styled, { css } from 'styled-components'
-import Content from '../Styled/Content'
-import LogoAndClose from './LogoAndClose'
-import ControlsPerShape from './ControlsPerShape'
-import { GroupAnimation, GroupBackgroundColor } from '../Styled/Groups'
-import RefreshButton from './RefreshButton'
-import GithubIcon from './GithubLink'
+import classNames from 'classnames'
+import Store from 'stores/Store'
+
+import Content from 'components/Styled/Content'
+import { GroupAnimation, GroupBackgroundColor } from 'components/Styled/Groups'
+
+import ColorPicker from 'components/Controls/ColorPicker'
+import Slider from 'components/Controls/Slider'
+import LogoAndClose from 'components/Controls/LogoAndClose'
+import ControlsPerShape from 'components/Controls/ControlsPerShape'
+import RefreshButton from 'components/Controls/RefreshButton'
+import GithubIcon from 'components/Controls/GithubLink'
+
+import { DEFAULT_ANIMATION_SPEED, CSS } from 'consts'
+import 'rc-slider/assets/index.css'
 
 const StyledControls = styled.div`
   position: fixed;

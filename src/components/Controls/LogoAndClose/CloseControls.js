@@ -1,9 +1,9 @@
 import React from 'react'
 import { bool } from 'prop-types'
 import styled from 'styled-components'
-import Store from '../../../stores/Store'
-import { CSS } from '../../../consts'
-import Button from '../../Styled/Button'
+import Store from 'stores/Store'
+import Button from 'components/Styled/Button'
+import { CSS } from 'consts'
 
 const handleMenuClose = () => {
   Store.menuIsVisible = !Store.menuIsVisible

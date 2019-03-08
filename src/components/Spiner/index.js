@@ -1,8 +1,8 @@
 import React from 'react'
 import { view } from 'react-easy-state'
 import styled, { keyframes } from 'styled-components'
-import Shape from '../Shape'
-import Store from '../../stores/Store'
+import Shape from 'components/Shape'
+import Store from 'stores/Store'
 
 const spinRight = keyframes`
   0% {

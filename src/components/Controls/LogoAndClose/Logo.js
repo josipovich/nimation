@@ -1,7 +1,7 @@
 import React from 'react'
 import { string } from 'prop-types'
-import { APP_NAME, CSS } from '../../../consts'
 import styled from 'styled-components'
+import { APP_NAME, CSS } from 'consts'
 
 const StyledLogo = styled.div`
   position: fixed;

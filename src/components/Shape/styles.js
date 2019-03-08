@@ -1,5 +1,5 @@
 import { css } from 'styled-components'
-import { fly, pulse } from './animations'
+import { fly, pulse } from 'components/Shape/animations'
 
 export const transformStyles = ({ scale, shape }) => `
 scale(${scale}) ${shape === 'triangle' ? 'rotate(245deg) translateX(10%)' : ''};
@@ -40,7 +40,8 @@ export const triangleStyles = ({ color }) => {
   return css`
     border-left: ${size} solid transparent;
     border-right: ${size} solid transparent;
-    border-bottom: ${size} solid rgba(${color.r}, ${color.g}, ${color.b}, ${color.a});
+    border-bottom: ${size} solid
+      rgba(${color.r}, ${color.g}, ${color.b}, ${color.a});
     background-color: rgba(0, 0, 0, 0);
   `
 }
@@ -62,6 +63,7 @@ export const zIndexStyles = ({ order }) =>
   `
 
 export const animationStyles = props => css`
-  animation: ${pulse(props)} ${props.pulse ? '5' : '0'}s ease-in-out alternate infinite,
+  animation: ${pulse(props)} ${props.pulse ? '5' : '0'}s ease-in-out alternate
+      infinite,
     ${fly(props)} ${props.fly ? '2' : '0'}s ease-in-out alternate infinite;
 `

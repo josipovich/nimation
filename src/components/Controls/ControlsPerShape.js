@@ -1,13 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Store from '../../stores/Store'
-import { immutableSplice } from '../../utils'
-import { SHAPES } from '../../consts'
-import Checkbox from './Checkbox'
-import ColorPicker from './ColorPicker'
-import Slider from './Slider'
-import { Group, GroupRow } from '../Styled/Groups'
-import Button from '../Styled/Button'
+import Store from 'stores/Store'
+import { immutableSplice } from 'utils'
+
+import { Group, GroupRow } from 'components/Styled/Groups'
+import Button from 'components/Styled/Button'
+
+import Checkbox from 'components/Controls/Checkbox'
+import ColorPicker from 'components/Controls/ColorPicker'
+import Slider from 'components/Controls/Slider'
+
+import { SHAPES } from 'consts'
 
 const handleShapeChange = id => value => {
   Store.shapes.find(d => d.id === id).shape = SHAPES[value]

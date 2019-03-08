@@ -1,9 +1,7 @@
 import React from 'react'
 import { shape, func, string, bool } from 'prop-types'
 import { view } from 'react-easy-state'
-import Store from './../../stores/Store'
 import reactCSS from 'reactcss'
-import styled from 'styled-components'
 import { ChromePicker } from 'react-color'
 
 class ColorPicker extends React.Component {
@@ -26,21 +24,22 @@ class ColorPicker extends React.Component {
   }
 
   render() {
+    // guah!
     const styles = reactCSS({
       default: {
         colors: {
           width: '100%',
           height: '100%',
-          background: `rgba(${this.state.color.r}, ${this.state.color.g}, ${this.state.color.b}, ${
-            this.state.color.a
-          })`
+          background: `rgba(${this.state.color.r}, ${this.state.color.g}, ${
+            this.state.color.b
+          }, ${this.state.color.a})`
         },
         swatch: {
           border: '1px solid #c5c5af',
           background: this.props.layerBetween
             ? `rgba(${this.props.layerBetween.r},${this.props.layerBetween.g},${
-              this.props.layerBetween.b
-            },${this.props.layerBetween.a})`
+                this.props.layerBetween.b
+              },${this.props.layerBetween.a})`
             : 'none',
           display: 'inline-block',
           cursor: 'pointer',
