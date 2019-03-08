@@ -1,7 +1,7 @@
 import React from 'react'
 import { bool } from 'prop-types'
 import styled, { css } from 'styled-components'
-import githubLogo from '../../github.svg'
+import githubLogo from '../../assets/github.svg'
 import { GITHUB_URL } from '../../consts'
 
 const StyledGithubIcon = styled.img`

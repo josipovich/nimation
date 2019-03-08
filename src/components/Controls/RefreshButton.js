@@ -1,7 +1,7 @@
 import React from 'react'
 import { bool } from 'prop-types'
 import styled, { css } from 'styled-components'
-import refreshIcon from './../../refresh.svg'
+import refreshIcon from '../../assets/refresh.svg'
 
 const handleRefreshClick = () => {
   window.location.reload()
