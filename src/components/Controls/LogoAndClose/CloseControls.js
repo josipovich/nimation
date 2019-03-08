@@ -1,8 +1,7 @@
 import React from 'react'
-// import { string, func, bool } from 'prop-types'
-import styled, { css } from 'styled-components'
+import { bool } from 'prop-types'
+import styled from 'styled-components'
 import Store from '../../../stores/Store'
-import { view } from 'react-easy-state'
 import cssVars from '../../../cssVars'
 import Button from '../../Button'
 
@@ -76,9 +75,27 @@ const BurgerLine = styled.div`
 const CloseControls = ({ menuIsVisible }) => (
   <StyledCloseControls>
     <CloseButton menuIsVisible={menuIsVisible} onClick={handleMenuClose}>
-      <Svg menuIsVisible={menuIsVisible} version="1.1" xmlns="http://www.w3.org/2000/Svg">
-        <line x1="1" y1="11" x2="11" y2="1" stroke={cssVars.white} strokeWidth="2" />
-        <line x1="1" y1="1" x2="11" y2="11" stroke={cssVars.white} strokeWidth="2" />
+      <Svg
+        menuIsVisible={menuIsVisible}
+        version="1.1"
+        xmlns="http://www.w3.org/2000/Svg"
+      >
+        <line
+          x1="1"
+          y1="11"
+          x2="11"
+          y2="1"
+          stroke={cssVars.white}
+          strokeWidth="2"
+        />
+        <line
+          x1="1"
+          y1="1"
+          x2="11"
+          y2="11"
+          stroke={cssVars.white}
+          strokeWidth="2"
+        />
       </Svg>
       <BurgerIcon menuIsVisible={menuIsVisible}>
         <BurgerLine />
@@ -88,5 +105,13 @@ const CloseControls = ({ menuIsVisible }) => (
     </CloseButton>
   </StyledCloseControls>
 )
+
+CloseControls.propTypes = {
+  menuIsVisible: bool
+}
+
+CloseControls.defaultProps = {
+  menuIsVisible: false
+}
 
 export default CloseControls

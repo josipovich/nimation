@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
 import Store from '../../stores/Store'
 import { immutableSplice } from '../../utils'
 import { SHAPES } from '../../consts'
 import Checkbox from './Checkbox'
 import ColorPicker from './ColorPicker'
 import Slider from './Slider'
+import { Group, GroupRow } from '../Groups'
+import Button from '../Button'
 
 const handleShapeChange = id => value => {
   Store.shapes.find(d => d.id === id).shape = SHAPES[value]
@@ -37,22 +38,20 @@ const handlePulseChange = id => e => {
   Store.shapes.find(d => d.id === id).pulse = e.target.checked
 }
 
-const ControlsPerShape = ({ shapes }) =>
+const ControlsPerShape = ({ shapes, backgroundColor }) =>
   shapes.map((currentShape, id) => {
     const { color, shape } = currentShape
     return (
-      <div key={id} className="Group">
-        <div className="Group__row">
+      <Group>
+        <GroupRow>
           <ColorPicker
-            layerBetween={Store.backgroundColor}
+            layerBetween={backgroundColor}
             color={color}
             whiteBg
             onChange={handleColorChange(id)}
           />
-          <button className="Button" onClick={handleSendToTopClick(id)}>
-            Send to top
-          </button>
-        </div>
+          <Button onClick={handleSendToTopClick(id)}>Send to top</Button>
+        </GroupRow>
         <Slider
           label="Scale"
           step={0.1}
@@ -83,7 +82,7 @@ const ControlsPerShape = ({ shapes }) =>
           id={id}
           checked={Store.shapes[id].pulse}
         />
-      </div>
+      </Group>
     )
   })
 

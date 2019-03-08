@@ -12,6 +12,10 @@ import {
 } from './styles'
 
 const ShapeStyled = styled.div`
+  width: 40%;
+  height: 40%;
+  position: absolute;
+  
   ${p => zIndexStyles(p.s)}
   ${p => colorStyles(p.s)}
   ${p => `transform: ${transformStyles(p.s)}`}

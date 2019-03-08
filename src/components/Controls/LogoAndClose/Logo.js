@@ -16,18 +16,14 @@ const StyledLogo = styled.div`
   }
 
   @media all and (max-width: 1350px) {
-    .Logo {
-      position: relative;
-      top: 2rem;
-      left: 0;
-      margin-bottom: 2rem;
-    }
+    position: relative;
+    top: 2rem;
+    left: 0;
+    margin-bottom: 2rem;
   }
 
   @media all and (max-width: 665px) {
-    .Logo {
-      width: 100%;
-    }
+    width: 100%;
   }
 `
 
@@ -43,7 +39,12 @@ const AppName = styled.div`
 const Logo = ({ color }) => {
   return (
     <StyledLogo>
-      <svg width="2rem" height="2rem" viewBox="0 0 135 135" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        width="2rem"
+        height="2rem"
+        viewBox="0 0 135 135"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           fill={`rgba(${color.r},${color.g},${color.b}, 1)`}
           strokeWidth="2"

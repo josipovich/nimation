@@ -64,3 +64,5 @@ export const COLOR = {
     a: '1'
   }
 }
+
+export const GITHUB_URL = 'https://github.com/josipovich'
