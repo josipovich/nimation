@@ -1,5 +1,5 @@
 import React from 'react'
-import { string, func, bool } from 'prop-types'
+import { string, func, bool, number } from 'prop-types'
 import styled from 'styled-components'
 
 const StyledCheckbox = styled.div`
@@ -74,7 +74,7 @@ const Checkbox = ({ id, onChange, label, checked, name }) => (
 )
 
 Checkbox.propTypes = {
-  id: string.isRequired,
+  id: number.isRequired,
   name: string.isRequired,
   onChange: func.isRequired,
   label: string,

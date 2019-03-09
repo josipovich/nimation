@@ -25,6 +25,7 @@ class ColorPicker extends React.Component {
 
   render() {
     // guah!
+    /* eslint-disable indent */
     const styles = reactCSS({
       default: {
         colors: {
@@ -66,7 +67,7 @@ class ColorPicker extends React.Component {
         }
       }
     })
-
+    /* eslint-enable indent */
     const {
       handleClick,
       handleClose,
@@ -96,12 +97,16 @@ ColorPicker.propTypes = {
   color: shape({}).isRequired,
   onChange: func.isRequired,
   width: string,
-  whiteBg: bool
+  whiteBg: bool,
+  layerBetween: shape({}),
+  directionTop: bool
 }
 
 ColorPicker.defaultProps = {
   width: '100%',
-  whiteBg: false
+  whiteBg: false,
+  layerBetween: null,
+  directionTop: false
 }
 
 export default view(ColorPicker)

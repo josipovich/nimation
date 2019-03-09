@@ -45,7 +45,7 @@ const ControlsPerShape = ({ shapes, backgroundColor }) =>
   shapes.map((currentShape, id) => {
     const { color, shape } = currentShape
     return (
-      <Group>
+      <Group key={id}>
         <GroupRow>
           <ColorPicker
             layerBetween={backgroundColor}
@@ -90,7 +90,7 @@ const ControlsPerShape = ({ shapes, backgroundColor }) =>
   })
 
 ControlsPerShape.propTypes = {
-  shapes: PropTypes.shape({}).isRequired,
+  shapes: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   backgroundColor: PropTypes.shape({}).isRequired
 }
 

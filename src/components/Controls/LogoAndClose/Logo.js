@@ -1,5 +1,5 @@
 import React from 'react'
-import { string } from 'prop-types'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { APP_NAME, CSS } from 'consts'
 
@@ -81,7 +81,7 @@ const Logo = ({ color }) => {
 }
 
 Logo.propTypes = {
-  color: string.isRequired
+  color: PropTypes.shape({}).isRequired
 }
 
 export default Logo
