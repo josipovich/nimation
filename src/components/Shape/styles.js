@@ -62,7 +62,7 @@ export const circleStyles = () => css`
 export const zIndexStyles = ({ order }) =>
   order &&
   css`
-    z-index: ${order};
+    z-index: ${order + 1};
   `
 
 export const animationStyles = props => {
@@ -71,7 +71,7 @@ export const animationStyles = props => {
   return css`
     animation: ${pulse(props)} ${props.pulse ? pulseSpeed : '0'}s ease-in-out
         alternate infinite,
-      ${fly(props)} ${props.fly ? pulseSpeed : '0'}s ease-in-out alternate
+      ${fly(props)} ${props.fly ? flySpeed : '0'}s ease-in-out alternate
         infinite;
   `
 }

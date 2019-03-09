@@ -24,8 +24,8 @@ const StyledSpiner = styled.div`
 
 const Spiner = () => (
   <StyledSpiner animationSpeed={Store.animationSpeed}>
-    {Store.shapes.map((shapeProps, i) => (
-      <Shape key={i} order={i + 1} {...shapeProps} />
+    {Store.shapes.map((props, i) => (
+      <Shape key={i} order={i} {...props} />
     ))}
   </StyledSpiner>
 )
