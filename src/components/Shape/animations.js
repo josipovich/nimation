@@ -1,17 +1,18 @@
 import { keyframes } from 'styled-components'
+import { random } from 'lodash'
 
 export const pulse = ({ scale = 1 }) => keyframes`
   0% {
     transform: scale(${scale});
   }
   100% {
-    transform: scale(${scale * 2.5});
+    transform: scale(${scale * random(2, 4)});
   }
   `
 
 export const fly = ({ position }) => {
-  const max = 80
-  const min = -20
+  const max = random(60, 80)
+  const min = random(-10, -40)
   switch (position) {
     case 'top':
       return keyframes`

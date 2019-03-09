@@ -69,6 +69,7 @@ const Controls = () => (
     <LogoAndClose
       backgroundColor={Store.backgroundColor}
       menuIsVisible={Store.menuIsVisible}
+      mouseMoving={Store.mouseMoving}
     />
 
     <ControlsTop menuIsVisible={Store.menuIsVisible}>

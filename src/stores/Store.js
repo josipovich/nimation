@@ -10,6 +10,7 @@ const Store = store({
   ),
   backgroundColor: generateRgba(),
   menuIsVisible: true,
+  mouseMoving: false,
   shapes: [
     {
       id: 0,

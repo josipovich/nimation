@@ -25,15 +25,23 @@ const StyledLogoAndClose = styled.div`
           }
         `
       : ''}
+
+  ${p =>
+    !p.menuIsVisible && p.mouseMoving
+      ? css`
+          transition: opacity 0.6s ease-in-out;
+          opacity: 1 !important;
+        `
+      : ''}
 `
 
 const RelativeContent = styled(Content)`
   position: relative;
 `
 
-const LogoAndClose = ({ backgroundColor, menuIsVisible }) => {
+const LogoAndClose = ({ backgroundColor, menuIsVisible, mouseMoving }) => {
   return (
-    <StyledLogoAndClose menuIsVisible={menuIsVisible}>
+    <StyledLogoAndClose mouseMoving={mouseMoving} menuIsVisible={menuIsVisible}>
       <RelativeContent>
         <Logo color={backgroundColor} />
         <CloseControls menuIsVisible={menuIsVisible} />
@@ -43,8 +51,9 @@ const LogoAndClose = ({ backgroundColor, menuIsVisible }) => {
 }
 
 LogoAndClose.propTypes = {
-  backgroundColor: shape({}),
-  menuIsVisible: bool
+  backgroundColor: shape({}).isRequired,
+  menuIsVisible: bool.isRequired,
+  mouseMoving: bool.isRequired
 }
 
 export default LogoAndClose

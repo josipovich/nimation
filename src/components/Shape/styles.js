@@ -1,4 +1,5 @@
 import { css } from 'styled-components'
+import { random } from 'lodash'
 import { fly, pulse } from 'components/Shape/animations'
 
 export const transformStyles = ({ scale, shape }) => `
@@ -64,8 +65,13 @@ export const zIndexStyles = ({ order }) =>
     z-index: ${order};
   `
 
-export const animationStyles = props => css`
-  animation: ${pulse(props)} ${props.pulse ? '5' : '0'}s ease-in-out alternate
-      infinite,
-    ${fly(props)} ${props.fly ? '2' : '0'}s ease-in-out alternate infinite;
-`
+export const animationStyles = props => {
+  const pulseSpeed = random(5, 20)
+  const flySpeed = random(5, 20)
+  return css`
+    animation: ${pulse(props)} ${props.pulse ? pulseSpeed : '0'}s ease-in-out
+        alternate infinite,
+      ${fly(props)} ${props.fly ? pulseSpeed : '0'}s ease-in-out alternate
+        infinite;
+  `
+}

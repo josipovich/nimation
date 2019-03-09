@@ -20,9 +20,24 @@ const Layout = styled.div`
   ${p => backgroundColorStyles(p.backgroundColor)}
 `
 
+const handleOnMouseMove = () => {
+  Store.mouseMoving = true
+  let timeout
+  ;(() => {
+    clearTimeout(timeout)
+    timeout = setTimeout(() => {
+      console.log(Store.mouseMoving)
+      Store.mouseMoving = false
+    }, 500)
+  })()
+}
+
 const App = () => {
   return (
-    <Layout backgroundColor={Store.backgroundColor}>
+    <Layout
+      onMouseMove={handleOnMouseMove}
+      backgroundColor={Store.backgroundColor}
+    >
       <Spiner />
       <Controls />
     </Layout>
