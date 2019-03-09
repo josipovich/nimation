@@ -1,5 +1,5 @@
 import { random } from 'lodash'
-import { SHAPES } from './consts'
+import { SHAPES } from 'consts'
 
 export const immutableSplice = (arr, start, deleteCount, ...items) => [
   ...arr.slice(0, start),

@@ -11,13 +11,12 @@ const backgroundColorStyles = ({ r, g, b, a }) => css`
 `
 
 const Layout = styled.div`
-  display: flex;
   height: 100vh;
-  width: 100vw;
-  flex-content: center;
+  display: flex;
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 12px;
-  color: ${CSS.white};
+  color: ${CSS.WHITE};
+
   ${p => backgroundColorStyles(p.backgroundColor)}
 `
 

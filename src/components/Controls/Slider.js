@@ -9,18 +9,18 @@ const styles = {
     border: 'none',
     width: '3px',
     outline: 'none',
-    backgroundColor: CSS.white,
+    backgroundColor: CSS.WHITE,
     boxShadow: 'none',
     marginLeft: '-1px',
     marginBottom: '1px'
   },
   track: {
-    backgroundColor: CSS.white,
+    backgroundColor: CSS.WHITE,
     height: '3px',
     borderRadius: '0'
   },
   rail: {
-    backgroundColor: CSS.white,
+    backgroundColor: CSS.WHITE,
     height: '1px',
     marginTop: '1px'
   }

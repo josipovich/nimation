@@ -25,9 +25,9 @@ const StyledCloseControls = styled.div`
 `
 
 const CloseButton = styled(Button)`
-  color: ${CSS.white};
+  color: ${CSS.WHITE};
   border: none;
-  border: 1px solid ${CSS.white};
+  border: 1px solid ${CSS.WHITE};
   margin-bottom: 0;
   width: 2rem;
   height: 2rem;
@@ -67,7 +67,7 @@ const BurgerIcon = styled.div`
 `
 
 const BurgerLine = styled.div`
-  background: ${CSS.white};
+  background: ${CSS.WHITE};
   height: 0.2rem;
   margin-bottom: 0.3rem;
 `
@@ -85,7 +85,7 @@ const CloseControls = ({ menuIsVisible }) => (
           y1="11"
           x2="11"
           y2="1"
-          stroke={CSS.white}
+          stroke={CSS.WHITE}
           strokeWidth="2"
         />
         <line
@@ -93,7 +93,7 @@ const CloseControls = ({ menuIsVisible }) => (
           y1="1"
           x2="11"
           y2="11"
-          stroke={CSS.white}
+          stroke={CSS.WHITE}
           strokeWidth="2"
         />
       </Svg>

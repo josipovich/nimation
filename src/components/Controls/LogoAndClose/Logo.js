@@ -8,7 +8,7 @@ const StyledLogo = styled.div`
   left: 2rem;
   top: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid ${CSS.white};
+  border-bottom: 1px solid ${CSS.WHITE};
 
   svg {
     width: 2rem;

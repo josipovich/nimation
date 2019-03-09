@@ -37,9 +37,9 @@ class ColorPicker extends React.Component {
         swatch: {
           border: '1px solid #c5c5af',
           background: this.props.layerBetween
-            ? `rgba(${this.props.layerBetween.r},${this.props.layerBetween.g},${
-                this.props.layerBetween.b
-              },${this.props.layerBetween.a})`
+            ? `rgba(${this.props.layerBetween.r}, ${
+                this.props.layerBetween.g
+              }, ${this.props.layerBetween.b},${this.props.layerBetween.a})`
             : 'none',
           display: 'inline-block',
           cursor: 'pointer',

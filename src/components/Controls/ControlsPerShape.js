@@ -20,15 +20,6 @@ const handleScaleChange = id => value => {
   Store.shapes.find(d => d.id === id).scale = value
 }
 
-const handleSendToTopClick = id => () => {
-  Store.shapes = immutableSplice(
-    Store.shapes.filter(ctor => ctor.id !== id),
-    Store.shapes.length - 1,
-    0,
-    Store.shapes.find(ctor => ctor.id === id)
-  )
-}
-
 const handleColorChange = id => ({ rgb }) => {
   Store.shapes.find(d => d.id === id).color = rgb
 }
@@ -39,6 +30,15 @@ const handleFlyChange = id => e => {
 
 const handlePulseChange = id => e => {
   Store.shapes.find(d => d.id === id).pulse = e.target.checked
+}
+
+const handleSendToTopClick = id => () => {
+  Store.shapes = immutableSplice(
+    Store.shapes.filter(ctor => ctor.id !== id),
+    Store.shapes.length - 1,
+    0,
+    Store.shapes.find(ctor => ctor.id === id)
+  )
 }
 
 const ControlsPerShape = ({ shapes, backgroundColor }) =>

@@ -2,7 +2,9 @@ import { css } from 'styled-components'
 import { fly, pulse } from 'components/Shape/animations'
 
 export const transformStyles = ({ scale, shape }) => `
-scale(${scale}) ${shape === 'triangle' ? 'rotate(245deg) translateX(10%)' : ''};
+  scale(${scale}) ${
+  shape === 'triangle' ? 'rotate(245deg) translateX(10%)' : ''
+};
 `
 
 export const positionStyles = ({ position }) => {

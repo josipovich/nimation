@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 export const Group = styled.div`
+  width: 20%;
   display: flex;
   flex-direction: column;
-  width: 20%;
   margin-bottom: 0;
 `
 
@@ -14,9 +14,9 @@ export const GroupRow = styled.div`
 `
 
 export const GroupAnimation = styled(Group)`
+  width: 100%;
   padding-top: 0.55rem;
   padding-left: 1rem;
-  width: 100%;
 `
 export const GroupBackgroundColor = styled(Group)`
   width: 2rem;

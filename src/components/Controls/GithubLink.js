@@ -24,7 +24,7 @@ const StyledGithubIcon = styled.img`
       : ''}
 
   :hover {
-    border: 1px solid ${CSS.white};
+    border: 1px solid ${CSS.WHITE};
   }
 
   @media all and (max-width: 1350px) {

@@ -3,6 +3,7 @@ import { view } from 'react-easy-state'
 import styled, { keyframes } from 'styled-components'
 import Shape from 'components/Shape'
 import Store from 'stores/Store'
+import { CSS } from 'consts'
 
 const spinRight = keyframes`
   0% {
@@ -14,11 +15,9 @@ const spinRight = keyframes`
 `
 
 const StyledSpiner = styled.div`
+  width: ${CSS.SPINER_WIDTH};
+  height: ${CSS.SPINER_HEIGHT};
   margin: auto;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  position: relative;
   transform: rotate(45deg) scale(1);
   animation: ${spinRight} ${p => p.animationSpeed}s linear infinite;
 `

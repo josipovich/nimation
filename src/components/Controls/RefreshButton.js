@@ -13,10 +13,10 @@ const StyledRefreshButton = styled.div`
   position: fixed;
   left: 2rem;
   bottom: 1.8rem;
+  margin-right: 1rem;
   background-color: transparent;
   border: none;
   outline: none;
-  margin-right: 1rem;
   transition: opacity 0.4s ease-in-out 0.2s;
   cursor: pointer;
 
@@ -43,7 +43,7 @@ const RefreshButtonImage = styled.img`
   border: 1px solid transparent;
 
   &:hover {
-    border: 1px solid ${CSS.white};
+    border: 1px solid ${CSS.WHITE};
   }
 `
 
