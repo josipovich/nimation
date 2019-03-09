@@ -4,7 +4,10 @@ import { random } from 'lodash'
 import { POSITIONS, DEFAULT_ANIMATION_SPEED } from 'consts'
 
 const Store = store({
-  animationSpeed: DEFAULT_ANIMATION_SPEED,
+  animationSpeed: random(
+    DEFAULT_ANIMATION_SPEED - 0.04,
+    DEFAULT_ANIMATION_SPEED + 0.02
+  ),
   backgroundColor: generateRgba(),
   menuIsVisible: true,
   shapes: [

@@ -13,7 +13,7 @@ import ControlsPerShape from 'components/Controls/ControlsPerShape'
 import RefreshButton from 'components/Controls/RefreshButton'
 import GithubIcon from 'components/Controls/GithubLink'
 
-import { DEFAULT_ANIMATION_SPEED, CSS } from 'consts'
+import { CSS } from 'consts'
 import 'rc-slider/assets/index.css'
 
 const StyledControls = styled.div`
@@ -57,7 +57,7 @@ const ControlsBottom = styled(StyledControls)`
 `
 
 const handleAnimationSpeedChange = value => {
-  Store.animationSpeed = 1 + (value - 0.5)
+  Store.animationSpeed = value
 }
 
 const handleBackgroundColor = ({ rgb }) => {
@@ -96,9 +96,9 @@ const Controls = () => (
           <Slider
             step={0.001}
             onChange={handleAnimationSpeedChange}
-            defaultValue={DEFAULT_ANIMATION_SPEED - 1}
-            min={-0.5}
-            max={0}
+            defaultValue={Store.animationSpeed}
+            min={0}
+            max={0.25}
           />
         </GroupAnimation>
         <GithubIcon menuIsVisible={Store.menuIsVisible} />
