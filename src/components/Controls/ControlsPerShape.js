@@ -43,7 +43,7 @@ const handleSendToTopClick = id => () => {
 
 const ControlsPerShape = ({ shapes, backgroundColor }) =>
   shapes.map((currentShape, id) => {
-    const { color, shape } = currentShape
+    const { color, shape, scale } = currentShape
     return (
       <Group key={id}>
         <GroupRow>
@@ -59,7 +59,7 @@ const ControlsPerShape = ({ shapes, backgroundColor }) =>
           label="Scale"
           step={0.1}
           onChange={handleScaleChange(id)}
-          defaultValue={1}
+          defaultValue={scale}
           min={0}
           max={20}
         />
