@@ -1,6 +1,7 @@
 import { store } from 'react-easy-state'
 import { generateRgba, randomShape } from 'utils'
-import { POSITIONS, DEFAULT_SCALE, DEFAULT_ANIMATION_SPEED } from 'consts'
+import { random } from 'lodash'
+import { POSITIONS, DEFAULT_ANIMATION_SPEED } from 'consts'
 
 const Store = store({
   animationSpeed: DEFAULT_ANIMATION_SPEED,
@@ -11,7 +12,7 @@ const Store = store({
       id: 0,
       color: generateRgba(),
       position: POSITIONS[0],
-      scale: DEFAULT_SCALE.value,
+      scale: `${random(1, 3)}`,
       shape: randomShape(),
       fly: true,
       pulse: true
@@ -21,7 +22,7 @@ const Store = store({
       id: 1,
       color: generateRgba(),
       position: POSITIONS[1],
-      scale: DEFAULT_SCALE.value,
+      scale: `${random(1, 3)}`,
       shape: randomShape(),
       fly: true,
       pulse: true
@@ -31,7 +32,7 @@ const Store = store({
       id: 2,
       color: generateRgba(),
       position: POSITIONS[2],
-      scale: DEFAULT_SCALE.value,
+      scale: `${random(1, 3)}`,
       shape: randomShape(),
       fly: true,
       pulse: true
@@ -41,7 +42,7 @@ const Store = store({
       id: 3,
       color: generateRgba(),
       position: POSITIONS[3],
-      scale: DEFAULT_SCALE.value,
+      scale: `${random(1, 3)}`,
       shape: randomShape(),
       fly: true,
       pulse: true

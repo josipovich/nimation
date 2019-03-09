@@ -1,32 +1,6 @@
-import { range } from 'lodash'
-
-export const DEFAULT_SCALE = { label: '1', value: '2' }
-
 export const POSITIONS = ['top', 'left', 'right', 'bottom']
 
 export const APP_NAME = 'NIMATION'
-
-export const OPTIONS = {
-  POSITIONS: [
-    { value: 'top', label: 'Top' },
-    { value: 'bottom', label: 'Bottom' },
-    { value: 'left', label: 'Left' },
-    { value: 'right', label: 'Right' }
-  ],
-  ORDERS: [
-    { value: 1, label: '1' },
-    { value: 2, label: '2' },
-    { value: 3, label: '3' },
-    { value: 4, label: '4' }
-  ],
-  COLORS: [
-    { value: 'yellow', label: 'Gold' },
-    { value: 'green', label: 'Green' },
-    { value: 'blue', label: 'Blue' },
-    { value: 'red', label: 'Red' }
-  ],
-  SCALES: range(11).map(i => ({ label: `${i}`, value: `${i * 2}` }))
-}
 
 export const SHAPES = ['circle', 'square', 'triangle']
 
