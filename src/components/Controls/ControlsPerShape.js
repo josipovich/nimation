@@ -76,21 +76,22 @@ const ControlsPerShape = ({ shapes, backgroundColor }) =>
           label="Fly"
           onChange={handleFlyChange(id)}
           id={id}
-          checked={Store.shapes[id].fly}
+          checked={currentShape.fly}
         />
         <Checkbox
           name="pulse"
           label="Pulse"
           onChange={handlePulseChange(id)}
           id={id}
-          checked={Store.shapes[id].pulse}
+          checked={currentShape.pulse}
         />
       </Group>
     )
   })
 
 ControlsPerShape.propTypes = {
-  shapes: PropTypes.shape({}).isRequired
+  shapes: PropTypes.shape({}).isRequired,
+  backgroundColor: PropTypes.shape({}).isRequired
 }
 
 export default ControlsPerShape

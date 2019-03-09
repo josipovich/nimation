@@ -26,7 +26,7 @@ const ShapeStyled = styled.div`
 `
 
 const Shape = props => {
-  return <ShapeStyled className="Shape" s={props} />
+  return <ShapeStyled s={props} />
 }
 
 export default view(Shape)
