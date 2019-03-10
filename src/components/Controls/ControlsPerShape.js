@@ -10,7 +10,7 @@ import Checkbox from '../Controls/Checkbox'
 import ColorPicker from '../Controls/ColorPicker'
 import Slider from '../Controls/Slider'
 
-import { SHAPES } from 'consts'
+import { SHAPES } from '../../consts'
 
 const handleShapeChange = id => value => {
   Store.shapes.find(d => d.id === id).shape = SHAPES[value]
