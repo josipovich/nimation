@@ -1,7 +1,7 @@
 import React from 'react'
 import Slider from 'rc-slider'
 import styled from 'styled-components'
-import { CSS } from 'consts'
+import { CSS } from '../../consts'
 
 const styles = {
   handle: {

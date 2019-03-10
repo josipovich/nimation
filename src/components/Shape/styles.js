@@ -1,6 +1,6 @@
 import { css } from 'styled-components'
 import { random } from 'lodash'
-import { fly, pulse } from 'components/Shape/animations'
+import { fly, pulse } from '../Shape/animations'
 
 export const transformStyles = ({ scale, shape }) => `
   scale(${scale}) ${

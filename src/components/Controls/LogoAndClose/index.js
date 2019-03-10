@@ -1,9 +1,9 @@
 import React from 'react'
 import { shape, bool } from 'prop-types'
 import styled, { css } from 'styled-components'
-import Content from 'components/Styled/Content'
-import CloseControls from 'components/Controls/LogoAndClose/CloseControls'
-import Logo from 'components/Controls/LogoAndClose/Logo'
+import Content from '../../Styled/Content'
+import CloseControls from './CloseControls'
+import Logo from './Logo'
 
 const StyledLogoAndClose = styled.div`
   position: fixed;

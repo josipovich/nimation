@@ -1,7 +1,7 @@
 import { store } from 'react-easy-state'
-import { generateRgba, randomShape } from 'utils'
 import { random } from 'lodash'
-import { POSITIONS, DEFAULT_ANIMATION_SPEED } from 'consts'
+import { generateRgba, randomShape } from '../utils'
+import { POSITIONS, DEFAULT_ANIMATION_SPEED } from '../consts'
 
 const Store = store({
   animationSpeed: random(

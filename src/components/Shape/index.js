@@ -9,7 +9,7 @@ import {
   triangleStyles,
   positionStyles,
   animationStyles
-} from 'components/Shape/styles'
+} from '../Shape/styles'
 
 const ShapeStyled = styled.div`
   width: 40%;
