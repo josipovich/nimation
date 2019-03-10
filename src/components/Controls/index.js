@@ -13,7 +13,7 @@ import ControlsPerShape from '../Controls/ControlsPerShape'
 import RefreshButton from '../Controls/RefreshButton'
 import GithubIcon from '../Controls/GithubLink'
 
-import { CSS } from 'consts'
+import { CSS } from '../../consts'
 import 'rc-slider/assets/index.css'
 
 const StyledControls = styled.div`
