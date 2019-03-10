@@ -16,7 +16,7 @@ const Store = store({
       id: 0,
       color: generateRgba(),
       position: POSITIONS[0],
-      scale: `${random(1, 3)}`,
+      scale: random(1, 3),
       shape: randomShape(),
       fly: true,
       pulse: true
@@ -26,7 +26,7 @@ const Store = store({
       id: 1,
       color: generateRgba(),
       position: POSITIONS[1],
-      scale: `${random(1, 3)}`,
+      scale: random(1, 3),
       shape: randomShape(),
       fly: true,
       pulse: true
@@ -36,7 +36,7 @@ const Store = store({
       id: 2,
       color: generateRgba(),
       position: POSITIONS[2],
-      scale: `${random(1, 3)}`,
+      scale: random(1, 3),
       shape: randomShape(),
       fly: true,
       pulse: true
@@ -46,7 +46,7 @@ const Store = store({
       id: 3,
       color: generateRgba(),
       position: POSITIONS[3],
-      scale: `${random(1, 3)}`,
+      scale: random(1, 3),
       shape: randomShape(),
       fly: true,
       pulse: true
