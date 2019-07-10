@@ -26,7 +26,6 @@ const handleOnMouseMove = () => {
   ;(() => {
     clearTimeout(timeout)
     timeout = setTimeout(() => {
-      console.log(Store.mouseMoving)
       Store.mouseMoving = false
     }, 500)
   })()
