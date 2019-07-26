@@ -14,4 +14,5 @@ export const generateRgba = () => ({
   a: Math.random().toFixed(2)
 })
 
+// TODO: change `2` to SHAPES.length - 1
 export const randomShape = () => SHAPES[random(2)]
